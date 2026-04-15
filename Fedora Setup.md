@@ -1,4 +1,5 @@
-## RPM Fusion ##
+# Fedora Setup
+## RPM Fusion
 ```
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
@@ -9,19 +10,19 @@ sudo dnf install rpmfusion-free-appstream-data rpmfusion-nonfree-appstream-data
 sudo dnf check-update
 ```
 
-## Flatpak ##
+## Flatpak
 ```
 flatpak remote-delete fedora
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-## Laptop Graphics ##
+## Laptop Graphics
 ```
 sudo dnf install -y libva-intel-driver
 ```
 
-## Media Codecs ##
+## Media Codecs
 ```
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 
@@ -30,12 +31,12 @@ sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=Package
 sudo dnf groupupdate sound-and-video
 ```
 
-## Hardware Acceleration ##
+## Hardware Acceleration
 ```
 sudo dnf install -y ffmpeg-libs libva libva-utils
 ```
 
-## Firefox Video ##
+## Firefox Video
 ```
 sudo dnf install -y openh264 gstreamer1-plugin-openh264 mozilla-openh264
 
@@ -44,17 +45,17 @@ sudo dnf config-manager --set-enabled fedora-cisco-openh264
 sudo dnf update -y
 ```
 
-## Archives ##
+## Archives
 ```
 sudo dnf install -y p7zip p7zip-plugins unrar 
 ```
-## AppImages ##
+## AppImages
 ```
 sudo dnf install -y fuse fuse-libs
 
 flatpak install flathub it.mijorus.gearlever
 ```
-## VSCode ##
+## VSCode
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
@@ -63,31 +64,31 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf install code
 ```
 
-## Multimedia ##
+## Multimedia
 ```
 sudo dnf install -y vlc
 
 flatpak install -y flathub com.obsproject.Studio
 ```
 
-## Productivity ##
+## Productivity
 ```
 flatpak install -y flathub org.onlyoffice.desktopeditors
 ```
 
-## Utilities ##
+## Utilities
 ```
 flatpak install flathub io.missioncenter.MissionCenter
 ```
 
-## Cleanup ##
+## Cleanup
 ```
 sudo dnf clean all
 
 sudo dnf autoremove -y
 ```
 
-## GRUB Settings ##
+## GRUB Settings
 ```
 sudo nano /etc/default/grub
 ```
@@ -100,7 +101,7 @@ GRUB_HIDDEN_TIMEOUT_QUIET=true
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
-## Secure Boot and NVIDIA Drivers ##
+## Secure Boot and NVIDIA Drivers
 ```
 mokutil --sb-state
 
@@ -127,7 +128,7 @@ systemctl reboot
 nvidia-smi
 ```
 
-## GDM HiDPI ##
+## GDM HiDPI
 ```
 sudo cp -f ~/.config/monitors.xml ~gdm/.config/monitors.xml
 
@@ -136,7 +137,7 @@ sudo chown $(id -u gdm):$(id -g gdm) ~gdm/.config/monitors.xml
 sudo restorecon ~gdm/.config/monitors.xml
 ```
 
-## Useful GNOME Extensions ##
+## Useful GNOME Extensions
 Dash to Dock
 
 Blur My Shell
