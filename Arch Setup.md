@@ -8,6 +8,7 @@ Move to /boot
 systemctl reboot --firmware-setup
 ```
 Clear keys
+
 Install sbctl
 ```
 sudo pacman -S sbctl
