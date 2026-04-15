@@ -95,3 +95,13 @@ Dock
 ```
 App Launcher Dolphin 1Password Cider Discord Firefox
 ```
+Themes / Widgets
+```
+Klassy
+Darkly
+Papirus Icons
+Plasmusic Toolbar
+Kurve - must install cava
+KDE Control Station
+Panel Colorizer
+```
