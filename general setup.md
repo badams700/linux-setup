@@ -19,9 +19,14 @@ Server = https://repo.cider.sh/arch
 ```
 
 ## 1Password Signing Key ##
+```
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
+```
 
+## Refresh Pacman After Adding Keys ##
+```
 pacman -Sy
+```
 
 ## Bulk Install Programs ##
 yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obs-studio-browser obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vivaldi vlc xivlauncher zoom
