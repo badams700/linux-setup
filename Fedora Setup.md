@@ -135,3 +135,18 @@ sudo chown $(id -u gdm):$(id -g gdm) ~gdm/.config/monitors.xml
 
 sudo restorecon ~gdm/.config/monitors.xml
 ```
+
+## Useful GNOME Extensions ##
+Dash to Dock
+
+Blur My Shell
+
+KDE Connect
+
+Control Monitor Brightness by DCC
+
+In Picture
+
+Just Perfection
+
+AppIndicator and KStatus
