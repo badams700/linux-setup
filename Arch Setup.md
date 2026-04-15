@@ -1,6 +1,8 @@
 ## Limine and Secure Boot Configuration ##
 Download black photo for background
+
 Name limine-splash.png
+
 Move to /boot
 ```
 systemctl reboot --firmware-setup
