@@ -91,3 +91,7 @@ Mission Center Obsidian Onlyoffice OpenLinkHub
 Planify Shelly Steam Settings
 Thunderbird Twintail VLC XIVLauncher
 ```
+Dock
+```
+App Launcher Dolphin 1Password Cider Discord Firefox
+```
