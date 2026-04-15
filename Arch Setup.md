@@ -82,3 +82,12 @@ sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
 ## Fastfetch ##
 Add config.jsonc to ~/badams/.config/fastfetch
+
+## KDE Layout ##
+App Menu
+```
+Chrome KCalc Konsole Minecraft
+Mission Center Obsidian Onlyoffice OpenLinkHub
+Planify Shelly Steam Settings
+Thunderbird Twintail VLC XIVLauncher
+```
