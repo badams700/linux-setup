@@ -36,6 +36,7 @@ sudo sbctl status
 
 ## Install Yay ##
 ```
+sudo pacman -Rs paru
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
 ## Cider Signing Key ##
