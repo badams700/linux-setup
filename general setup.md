@@ -9,13 +9,14 @@ sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
 ```
 
 ## Cider Repo ##
+```
 sudo nano /etc/pacman.conf
+```
+> [cidercollective]
 
-[cidercollective]
+> SigLevel = Required TrustedOnly
 
-SigLevel = Required TrustedOnly
-
-Server = https://repo.cider.sh/arch
+> Server = https://repo.cider.sh/arch
 
 ## 1Password Signing Key ##
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
