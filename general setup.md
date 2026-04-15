@@ -36,7 +36,8 @@ yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly
 ## Change Console Font to HiDPI ##
 ```
 sudo nano /etc/vconsole.conf
-
+```
+```
 FONT=ter-132b
 ```
 
