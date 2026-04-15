@@ -59,6 +59,12 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
+## Automount Network Share##
+sudo nano /etc/fstab
+```
+//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=badams,username=badams,password=Urba2143!,rw 0 0
+```
+
 ## Klassy ##
 ```
 sudo pacman -S --needed git frameworkintegration gcc-libs glibc kcmutils kcolorscheme kconfig kcoreaddons kdecoration kguiaddons ki18n kiconthemes kirigami kwidgetsaddons kwindowsystem qt6-base qt6-declarative qt6-svg xdg-utils extra-cmake-modules kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
