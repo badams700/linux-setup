@@ -42,9 +42,12 @@ FONT=ter-132b
 ```
 
 ## Install Flatpak Programs ##
+```
 flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.gnome.DejaDup org.jellyfin.JellyfinDesktop
+```
 
 ## OpenLinkHub - Corsair ##
+```
 git clone https://github.com/jurkovic-nikola/OpenLinkHub.git
 
 cd OpenLinkHub/
@@ -54,10 +57,13 @@ CGO_CFLAGS_ALLOW='-fno-strict-overflow' go build .
 chmod +x install.sh
 
 sudo ./install.sh
+```
 
 ## Klassy ##
+```
 sudo pacman -S --needed git frameworkintegration gcc-libs glibc kcmutils kcolorscheme kconfig kcoreaddons kdecoration kguiaddons ki18n kiconthemes kirigami kwidgetsaddons kwindowsystem qt6-base qt6-declarative qt6-svg xdg-utils extra-cmake-modules kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
-
+```
+```
 git clone https://github.com/paulmcauley/klassy
 
 cd klassy
@@ -65,10 +71,12 @@ cd klassy
 git checkout plasma6.3
 
 ./install.sh
+```
 
 ## KDE Wallpaper Engine ##
 Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
-
+```
 sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
 
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
+```
