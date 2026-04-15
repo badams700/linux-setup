@@ -1,3 +1,36 @@
+## Limine and Secure Boot Configuration ##
+Download black photo for background
+Name limine-splash.png
+Move to /boot
+```
+systemctl reboot --firmware-setup
+```
+Clear keys
+Install sbctl
+```
+sudo pacman -S sbctl
+sudo sbctl status
+sudo sbctl create-keys
+sudo sbctl enroll-keys --microsoft
+```
+Edit /etc/default/limine
+```
+ENABLE_ENROLL_LIMINE_CONFIG=yes
+```
+Sign Limine
+```
+sudo b2sum /boot/limine-splash.png
+```
+Copy the result hash to /boot/limine.conf - after limine-splash.png#<hash>
+```
+sudo limine-enroll-config
+sudo limine-update
+```
+To verify:
+```
+sudo sbctl status
+```
+
 ## Install Yay ##
 ```
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
