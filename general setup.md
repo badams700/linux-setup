@@ -1,5 +1,5 @@
 ## Install Yay ##
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+> git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 ## Cider Signing Key ##
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
