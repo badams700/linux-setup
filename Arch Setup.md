@@ -1,4 +1,6 @@
-## Limine and Secure Boot Configuration ##
+# Arch / CachyOS Setup
+
+## Limine and Secure Boot Configuration
 Download black photo for background
 
 Name limine-splash.png
