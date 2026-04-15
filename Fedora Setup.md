@@ -106,7 +106,7 @@ mokutil --sb-state
 
 sudo dnf update
 ```
-*install RPMFusion repos*
+*install RPMFusion repos, if not installed, then continue*
 ```
 sudo dnf install kmodtool akmods mokutil openssl
 
