@@ -79,7 +79,7 @@ mokutil --sb-state
 
 sudo dnf update
 
-install RPMFusion repos
+*install RPMFusion repos*
 
 sudo dnf install kmodtool akmods mokutil openssl
 
