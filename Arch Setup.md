@@ -190,7 +190,7 @@ sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/relea
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
 ## Fastfetch
-Add config.jsonc to ~/badams/.config/fastfetch
+Add config.jsonc to ~/.config/fastfetch
 
 ## KDE Layout
 App Menu
