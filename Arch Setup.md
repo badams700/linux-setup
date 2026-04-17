@@ -1,5 +1,66 @@
 # Arch / CachyOS Setup
 
+## systemd-boot and Secure Boot Configuration
+
+Identify Windows EFI partition (200MB, FAT32)
+```
+lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT
+```
+
+Mount Windows EFI
+```
+sudo mkdir /mnt/WinBoot
+sudo mount /dev/<partition> /mnt/WinBoot
+```
+
+Copy Windows EFI
+```
+sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
+```
+
+Unmount Windows EFI
+```
+sudo umount /mnt/WinBoot
+sudo rm -r /mnt/WinBoot
+```
+
+Edit Configuration
+```
+sudo nano /boot/loader/loader.conf
+```
+
+Secure Boot
+```
+systemctl reboot --firmware-setup
+```
+Clear keys
+
+Install sbctl
+```
+sudo pacman -S sbctl
+sudo sbctl status
+sudo sbctl create-keys
+sudo sbctl enroll-keys --microsoft
+```
+
+Sign EFI - Part 1
+```
+sudo sbctl verify
+sudo sbctl-batch-sign
+sudo sbctl verify
+```
+Reboot and enable Secure Boot. 
+
+Sign EFI - Part 2
+```
+sudo sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi
+```
+
+Verify
+```
+sudo sbctl status
+```
+
 ## Limine and Secure Boot Configuration
 Download black photo for background
 
