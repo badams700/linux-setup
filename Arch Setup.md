@@ -161,6 +161,7 @@ sudo ./install.sh
 
 ## Automount Network Share
 ```
+sudo mkdir /mnt/Share
 sudo nano /etc/fstab
 ```
 ```
