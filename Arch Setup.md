@@ -28,10 +28,6 @@ ENABLE_ENROLL_LIMINE_CONFIG=yes
 ```
 Sign Limine
 ```
-sudo b2sum /boot/limine-splash.png
-```
-Copy the result hash to /boot/limine.conf - after limine-splash.png#<hash>
-```
 sudo limine-enroll-config
 sudo limine-update
 ```
