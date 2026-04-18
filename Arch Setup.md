@@ -107,7 +107,7 @@ sudo mkdir /mnt/Share
 sudo nano /etc/fstab
 ```
 ```
-//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=badams,username=badams,password=Urba2143!,rw 0 0
+//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=badams,username=badams,password=<password>,rw 0 0
 ```
 
 ## Klassy
