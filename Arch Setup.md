@@ -69,9 +69,12 @@ pacman -Sy
 
 ## Bulk Install Programs
 ```
-yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obs-studio-browser obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vivaldi vlc xivlauncher zoom
+yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vivaldi vlc xivlauncher zoom
 ```
-
+Install OBS Separately
+```
+yay -S obs-studio-browser
+```
 ## Change Console Font to HiDPI
 ```
 sudo nano /etc/vconsole.conf
