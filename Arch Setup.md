@@ -1,4 +1,7 @@
 # Arch / CachyOS Setup
+```
+timedatectl set-local-rtc 1
+```
 
 ## Limine and Secure Boot Configuration
 Edit Limine config file
@@ -69,7 +72,7 @@ pacman -Sy
 
 ## Bulk Install Programs
 ```
-yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vivaldi vlc xivlauncher zoom
+yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk
 ```
 Install OBS Separately
 ```
@@ -85,7 +88,7 @@ FONT=ter-132b
 
 ## Install Flatpak Programs
 ```
-flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.gnome.DejaDup org.jellyfin.JellyfinDesktop
+flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.jellyfin.JellyfinDesktop
 ```
 
 ## OpenLinkHub - Corsair
@@ -99,6 +102,27 @@ CGO_CFLAGS_ALLOW='-fno-strict-overflow' go build .
 chmod +x install.sh
 
 sudo ./install.sh
+```
+Configure RAM
+```
+sudo i2cdetect -l
+```
+Find SMBUS controller
+```
+sudo dmidecode -t memory | grep 'Part Number'
+```
+```
+sudo nano /opt/OpenLinkHub/config.json
+```
+Fill in memory info
+Udev Rules
+```
+echo 'KERNEL=="i2c-<NUMBER>", MODE="0600", OWNER="openlinkhub" | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+```
+sudo systemctl restart OpenLinkHub.service
 ```
 
 ## Automount Network Share
@@ -131,6 +155,13 @@ sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/relea
 
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
+
+## Orchis
+```
+git clone https://github.com/vinceliuice/Orchis-kde
+./install.sh
+```
+
 ## Fastfetch
 ```
 cd ~/.config
@@ -156,6 +187,7 @@ Themes / Widgets
 Klassy
 Darkly
 Papirus Icons
+Orchis
 Plasmusic Toolbar
 Kurve - must install cava
 KDE Control Station
