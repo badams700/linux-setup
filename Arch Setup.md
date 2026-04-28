@@ -193,3 +193,13 @@ Kurve - must install cava
 KDE Control Station
 Panel Colorizer
 ```
+
+## Game Locations
+FFXIV
+```
+~/.xlcore/ - ffxiv
+```
+TwinTail
+```
+~/.local/share/twintaillauncher/games/ - hk4e_global, hkrpg_global, wuwa_global
+```
