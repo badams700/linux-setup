@@ -214,3 +214,7 @@ git clone https://github.com/badams700/fastfetch.git
 ~/.local/share/twintaillauncher/games/
 ```
 </details>
+
+<details>
+<summary> Fedora </summary>
+</details>
