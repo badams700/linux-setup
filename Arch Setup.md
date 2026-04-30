@@ -4,6 +4,11 @@
 timedatectl set-local-rtc 1
 ```
 ## Bootloader and Secure Boot
+<details> 
+<summary> UKI and Secure Boot 
+</summary>
+</details>
+
 <details>
 <summary> systemd-boot and Secure Boot </summary>
 </details>
