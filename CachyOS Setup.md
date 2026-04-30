@@ -32,22 +32,29 @@ systemctl reboot --firmware-setup
 ### Install and configure sbctl
 ```
 sudo pacman -S sbctl
-sudo sbctl status
 sudo sbctl create-keys
 sudo sbctl enroll-keys --microsoft
 ```
-Edit /etc/default/limine
+### Configure Limine
+```
+sudo nano /etc/default/limine
+```
+### Add the following line:
 ```
 ENABLE_ENROLL_LIMINE_CONFIG=yes
 ```
-Sign Limine
+### Sign Limine
 ```
 sudo limine-enroll-config
 sudo limine-update
 ```
-To verify:
+### To verify:
 ```
 sudo sbctl status
+```
+### Reboot to UEFI and Ensure Secure Boot is On
+```
+systemctl reboot --firmware-setup
 ```
 </details>
 
