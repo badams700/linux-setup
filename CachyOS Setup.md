@@ -58,10 +58,13 @@ systemctl reboot --firmware-setup
 ```
 </details>
 
-## Install Yay
-
+## AUR Helper
+### Remove paru
 ```
 sudo pacman -Rs paru
+```
+### Install yay
+```
 cd Projects
 git clone https://aur.archlinux.org/yay.git
 cd yay
