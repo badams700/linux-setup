@@ -62,6 +62,7 @@ systemctl reboot --firmware-setup
 
 ```
 sudo pacman -Rs paru
+cd Projects
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
