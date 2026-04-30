@@ -193,10 +193,13 @@ cd Orchis-kde/
 ```
 ## Fastfetch
 ```
-cd ~/.config
+sudo mkdir ~/.config/fastfetch
 ```
 ```
-git clone https://github.com/badams700/fastfetch.git
+cd ~/.config/fastfetch
+```
+```
+sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ```
 ## KDE Layout
 ![KDE Layout](link_to_image)
