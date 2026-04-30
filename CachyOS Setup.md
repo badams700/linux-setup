@@ -151,6 +151,7 @@ sudo systemctl restart OpenLinkHub.service
 ## Automount Network Share
 ```
 sudo mkdir /mnt/Share
+
 sudo nano /etc/fstab
 ```
 ### Add to fstab:
@@ -184,11 +185,13 @@ sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ## Orchis
 ```
 cd Projects/
+
 git clone https://github.com/vinceliuice/Orchis-kde
+
 cd Orchis-kde/
+
 ./install.sh
 ```
-
 ## Fastfetch
 ```
 cd ~/.config
