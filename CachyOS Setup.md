@@ -208,9 +208,8 @@ git clone https://github.com/badams700/fastfetch.git
 | Planify | Shelly | Steam | Settings |
 | Thunderbird | Twintail | VLC | XIVLauncher |
 ### Dock
-```
-App Launcher Dolphin 1Password Cider Discord Firefox
-```
+| App Launcher | Dolphin | 1Password | Cider  | Discord | Firefox |
+| --- | --- | --- | --- | --- | --- |
 ### KDE Store
 - [ ] Papirus Icons
 - [ ] Plasmusic Toolbar
