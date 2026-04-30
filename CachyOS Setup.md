@@ -202,9 +202,8 @@ git clone https://github.com/badams700/fastfetch.git
 
 ## KDE Layout
 ### App Menu
-| 1 | 2 | 3 | 4|
-| --- | --- | --- | --- |
 | Chrome | KCalc | Konsole | Minecraft |
+| --- | --- | --- | --- |
 | Mission Center | Obsidian | Onlyoffice | OpenLinkHub |
 | Planify | Shelly | Steam | Settings |
 | Thunderbird | Twintail | VLC | XIVLauncher |
