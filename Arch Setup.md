@@ -2,8 +2,8 @@
 ```
 timedatectl set-local-rtc 1
 ```
-
-## Limine and Secure Boot Configuration
+<details>
+<summary>Limine and Secure Boot Configuration</summary>
 Edit Limine config file
 ```
 sudo nano /boot/limine.conf
@@ -38,7 +38,7 @@ To verify:
 ```
 sudo sbctl status
 ```
-
+</details>
 ## Install Yay
 ```
 sudo pacman -Rs paru
