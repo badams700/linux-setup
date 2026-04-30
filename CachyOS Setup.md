@@ -201,27 +201,24 @@ git clone https://github.com/badams700/fastfetch.git
 ```
 
 ## KDE Layout
-App Menu
+### App Menu
 ```
 Chrome KCalc Konsole Minecraft
 Mission Center Obsidian Onlyoffice OpenLinkHub
 Planify Shelly Steam Settings
 Thunderbird Twintail VLC XIVLauncher
 ```
-Dock
+### Dock
 ```
 App Launcher Dolphin 1Password Cider Discord Firefox
 ```
-Themes / Widgets
+### KDE Store
 ```
-Klassy
-Darkly
-Papirus Icons
-Orchis
-Plasmusic Toolbar
-Kurve - must install cava
-KDE Control Station
-Panel Colorizer
+* Papirus Icons
+* Plasmusic Toolbar
+* Kurve
+* KDE Control Station
+* Panel Colorizer
 ```
 
 ## Game Locations
