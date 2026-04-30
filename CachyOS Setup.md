@@ -25,7 +25,6 @@ sudo nano /boot/limine.conf
 term_background: 00000000
 - remove wallpaper line
 ```
-### Setup Secure Boot
 ### Reset UEFI to Setup Mode
 ```
 systemctl reboot --firmware-setup
