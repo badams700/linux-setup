@@ -196,15 +196,7 @@ cd ~/.config
 git clone https://github.com/badams700/fastfetch.git
 ```
 ## KDE Layout
-### App Menu
-| Chrome | KCalc | Konsole | Minecraft |
-| --- | --- | --- | --- |
-| Mission Center | Obsidian | Onlyoffice | OpenLinkHub |
-| Planify | Shelly | Steam | Settings |
-| Thunderbird | Twintail | VLC | XIVLauncher |
-### Dock
-| App Launcher | Dolphin | 1Password | Cider  | Discord | Firefox |
-| --- | --- | --- | --- | --- | --- |
+![KDE Layout](link_to_image)
 ### KDE Store
 - [ ] Papirus Icons
 - [ ] Plasmusic Toolbar
