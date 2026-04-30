@@ -6,7 +6,7 @@ timedatectl set-local-rtc 1
 ## Bootloader and Secure Boot
 <details>
 <summary> Limine and Secure Boot Configuration </summary>
-Edit Limine config file
+1. Edit Limine config file
   
 ```
 sudo nano /boot/limine.conf
