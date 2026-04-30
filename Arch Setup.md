@@ -5,6 +5,7 @@ timedatectl set-local-rtc 1
 <details>
 <summary>Limine and Secure Boot Configuration</summary>
 Edit Limine config file
+  
 ```
 sudo nano /boot/limine.conf
 ```
@@ -40,6 +41,7 @@ sudo sbctl status
 ```
 </details>
 ## Install Yay
+
 ```
 sudo pacman -Rs paru
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
