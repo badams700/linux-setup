@@ -213,13 +213,11 @@ Thunderbird Twintail VLC XIVLauncher
 App Launcher Dolphin 1Password Cider Discord Firefox
 ```
 ### KDE Store
-```
 * Papirus Icons
 * Plasmusic Toolbar
 * Kurve
 * KDE Control Station
 * Panel Colorizer
-```
 
 ## Game Locations
 FFXIV
