@@ -15,6 +15,7 @@ timedatectl set-local-rtc 1
 
 <details>
 <summary> Limine and Secure Boot </summary>
+
   
 1. Edit Limine config file
   
