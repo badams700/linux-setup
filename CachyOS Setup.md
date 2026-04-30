@@ -174,6 +174,8 @@ git checkout plasma6.3
 ## KDE Wallpaper Engine
 ### Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
 ```
+cd Projects/
+
 sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
 
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
