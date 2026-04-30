@@ -96,7 +96,7 @@ sudo pacman -Syu
 ## Bulk Install Programs
 ### yay / pacman
 ```
-yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk papirus-icon-theme
+yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk papirus-icon-theme plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar
 ```
 ### Install OBS Separately
 ```
@@ -198,11 +198,7 @@ git clone https://github.com/badams700/fastfetch.git
 ## KDE Layout
 ![KDE Layout](link_to_image)
 ### KDE Store
-- [ ] Papirus Icons
-- [ ] Plasmusic Toolbar
-- [ ] Kurve
 - [ ] KDE Control Station
-- [ ] Panel Colorizer
 ## Game Locations
 ### FFXIV
 ```
