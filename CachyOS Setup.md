@@ -211,11 +211,11 @@ git clone https://github.com/badams700/fastfetch.git
 App Launcher Dolphin 1Password Cider Discord Firefox
 ```
 ### KDE Store
-* Papirus Icons
-* Plasmusic Toolbar
-* Kurve
-* KDE Control Station
-* Panel Colorizer
+[ ] Papirus Icons
+[ ] Plasmusic Toolbar
+[ ] Kurve
+[ ] KDE Control Station
+[ ] Panel Colorizer
 
 ## Game Locations
 FFXIV
