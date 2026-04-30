@@ -76,27 +76,24 @@ makepkg -si
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
 sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
 ```
-
-## Cider Repo
+### Import 1Password Signing Key
+```
+curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
+```
+### Add Cider Repo
 ```
 sudo nano /etc/pacman.conf
 ```
+### Add to file:
 ```
 [cidercollective]
 SigLevel = Required TrustedOnly
 Server = https://repo.cider.sh/arch
 ```
-
-## 1Password Signing Key
-```
-curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
-```
-
-## Refresh Pacman After Adding Keys
+### Refresh Pacman
 ```
 pacman -Sy
 ```
-
 ## Bulk Install Programs
 ```
 yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk
