@@ -1,4 +1,4 @@
-# CachyOS Setup
+# Linux Setup
 <details>
 <summary> CachyOS </summary>
   
