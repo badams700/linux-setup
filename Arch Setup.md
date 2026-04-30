@@ -5,7 +5,11 @@ timedatectl set-local-rtc 1
 ```
 ## Bootloader and Secure Boot
 <details>
-<summary> Limine and Secure Boot Configuration </summary>
+<summary> systemd-boot and Secure Boot </summary>
+</details>
+
+<details>
+<summary> Limine and Secure Boot </summary>
   
 1. Edit Limine config file
   
