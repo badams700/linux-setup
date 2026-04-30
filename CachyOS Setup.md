@@ -84,7 +84,6 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
 ```
 sudo nano /etc/pacman.conf
 ```
-### Add to file:
 ```
 [cidercollective]
 SigLevel = Required TrustedOnly
@@ -92,7 +91,7 @@ Server = https://repo.cider.sh/arch
 ```
 ### Refresh Pacman
 ```
-pacman -Sy
+sudo pacman -Sy
 ```
 ## Bulk Install Programs
 ```
