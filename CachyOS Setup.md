@@ -15,7 +15,7 @@ timedatectl set-local-rtc 1
 <details>
 <summary> Limine and Secure Boot </summary>
 
-> Edit Limine config file
+  Edit Limine config file
   
 ```
 sudo nano /boot/limine.conf
