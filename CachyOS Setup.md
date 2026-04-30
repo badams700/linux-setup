@@ -5,8 +5,7 @@ timedatectl set-local-rtc 1
 ```
 ## Bootloader and Secure Boot
 <details> 
-<summary> UKI and Secure Boot 
-</summary>
+<summary> UKI and Secure Boot </summary>
 </details>
 
 <details>
@@ -16,7 +15,6 @@ timedatectl set-local-rtc 1
 <details>
 <summary> Limine and Secure Boot </summary>
 
-  
 1. Edit Limine config file
   
 ```
