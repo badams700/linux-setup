@@ -1,4 +1,7 @@
 # CachyOS Setup
+<details>
+<summary> CachyOS </summary>
+  
 ## Time Sync with Windows
 ```
 timedatectl set-local-rtc 1
@@ -210,3 +213,4 @@ git clone https://github.com/badams700/fastfetch.git
 ```
 ~/.local/share/twintaillauncher/games/
 ```
+</details>
