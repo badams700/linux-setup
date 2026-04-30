@@ -147,7 +147,6 @@ sudo udevadm trigger
 ```
 sudo systemctl restart OpenLinkHub.service
 ```
-
 ## Automount Network Share
 ```
 sudo mkdir /mnt/Share
@@ -158,7 +157,6 @@ sudo nano /etc/fstab
 ```
 //192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,username=badams,password=<password>,rw 0 0
 ```
-
 ## Klassy
 ```
 cd Projects/
@@ -171,7 +169,6 @@ git checkout plasma6.3
 
 ./install.sh
 ```
-
 ## KDE Wallpaper Engine
 ### Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
 ```
@@ -181,7 +178,6 @@ sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/relea
 
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
-
 ## Orchis
 ```
 cd Projects/
@@ -199,7 +195,6 @@ cd ~/.config
 ```
 git clone https://github.com/badams700/fastfetch.git
 ```
-
 ## KDE Layout
 ### App Menu
 | Chrome | KCalc | Konsole | Minecraft |
@@ -216,13 +211,12 @@ git clone https://github.com/badams700/fastfetch.git
 - [ ] Kurve
 - [ ] KDE Control Station
 - [ ] Panel Colorizer
-
 ## Game Locations
-FFXIV
+### FFXIV
 ```
-~/.xlcore/ - ffxiv
+~/.xlcore/
 ```
-TwinTail
+### TwinTail
 ```
-~/.local/share/twintaillauncher/games/ - hk4e_global, hkrpg_global, wuwa_global
+~/.local/share/twintaillauncher/games/
 ```
