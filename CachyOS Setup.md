@@ -91,7 +91,7 @@ Server = https://repo.cider.sh/arch
 ```
 ### Refresh Pacman
 ```
-sudo pacman -Sy
+sudo pacman -Syu
 ```
 ## Bulk Install Programs
 ```
