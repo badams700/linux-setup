@@ -199,6 +199,8 @@ git clone https://github.com/badams700/fastfetch.git
 ![KDE Layout](link_to_image)
 ### KDE Store
 - [ ] KDE Control Station
+## KDE Blur
+### Import via Settings
 ## Game Locations
 ### FFXIV
 ```
