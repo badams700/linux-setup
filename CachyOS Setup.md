@@ -70,6 +70,8 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+## Signing Keys and Repos
+
 ## Cider Signing Key
 ```
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
