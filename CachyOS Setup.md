@@ -20,17 +20,17 @@ timedatectl set-local-rtc 1
 ```
 sudo nano /boot/limine.conf
 ```
+### Edit the following lines:
 ```
 term_background: 00000000
 - remove wallpaper line
 ```
-Setup Secure Boot
+### Setup Secure Boot
+### Reset UEFI to Setup Mode
 ```
 systemctl reboot --firmware-setup
 ```
-Clear keys
-
-Install sbctl
+### Install and configure sbctl
 ```
 sudo pacman -S sbctl
 sudo sbctl status
