@@ -108,10 +108,7 @@ flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.
 ```
 ## Change Console Font to HiDPI
 ```
-sudo nano /etc/vconsole.conf
-```
-```
-FONT=ter-132b
+sudo echo "FONT=ter-132b" >> /etc/vconsole.conf
 ```
 ## OpenLinkHub - Corsair
 ```
