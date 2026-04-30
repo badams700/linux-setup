@@ -40,6 +40,7 @@ To verify:
 sudo sbctl status
 ```
 </details>
+
 ## Install Yay
 
 ```
