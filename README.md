@@ -218,3 +218,7 @@ git clone https://github.com/badams700/fastfetch.git
 <details>
 <summary> Fedora </summary>
 </details>
+
+<details>
+<summary> Homelab Server </summary>
+</details>
