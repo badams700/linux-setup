@@ -65,7 +65,7 @@ sudo pacman -Rs paru
 ```
 ### Install yay
 ```
-cd Projects
+cd Projects/
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -106,12 +106,15 @@ yay -S obs-studio-browser
 ```
 flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.jellyfin.JellyfinDesktop
 ```
-## Change Console Font to HiDPI
+## Console Font
 ```
 sudo echo "FONT=ter-132b" >> /etc/vconsole.conf
 ```
 ## OpenLinkHub - Corsair
+### Build + Install
 ```
+cd Projects/
+
 git clone https://github.com/jurkovic-nikola/OpenLinkHub.git
 
 cd OpenLinkHub/
@@ -122,24 +125,25 @@ chmod +x install.sh
 
 sudo ./install.sh
 ```
-Configure RAM
+### Configure RAM
 ```
 sudo i2cdetect -l
 ```
-Find SMBUS controller
+### Find SMBUS controller
 ```
 sudo dmidecode -t memory | grep 'Part Number'
 ```
+### Add Memory Info
 ```
 sudo nano /opt/OpenLinkHub/config.json
 ```
-Fill in memory info
-Udev Rules
+### Udev Rules
 ```
 echo 'KERNEL=="i2c-<NUMBER>", MODE="0600", OWNER="openlinkhub" | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
+### Restart Service
 ```
 sudo systemctl restart OpenLinkHub.service
 ```
@@ -149,15 +153,15 @@ sudo systemctl restart OpenLinkHub.service
 sudo mkdir /mnt/Share
 sudo nano /etc/fstab
 ```
+### Add to fstab:
 ```
-//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=badams,username=badams,password=<password>,rw 0 0
+//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,username=badams,password=<password>,rw 0 0
 ```
 
 ## Klassy
 ```
-sudo pacman -S --needed git frameworkintegration gcc-libs glibc kcmutils kcolorscheme kconfig kcoreaddons kdecoration kguiaddons ki18n kiconthemes kirigami kwidgetsaddons kwindowsystem qt6-base qt6-declarative qt6-svg xdg-utils extra-cmake-modules kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
-```
-```
+cd Projects/
+
 git clone https://github.com/paulmcauley/klassy
 
 cd klassy
@@ -168,7 +172,7 @@ git checkout plasma6.3
 ```
 
 ## KDE Wallpaper Engine
-Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
+### Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
 ```
 sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
 
@@ -177,7 +181,9 @@ sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 
 ## Orchis
 ```
+cd Projects/
 git clone https://github.com/vinceliuice/Orchis-kde
+cd Orchis-kde/
 ./install.sh
 ```
 
