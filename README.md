@@ -309,7 +309,7 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.js
 ```
 cd Projects/
 
-sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/<FILENAME>
+sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/blur.kwinrule
 ```
 - Import via Settings
 ## Game Locations
