@@ -10,10 +10,108 @@ timedatectl set-local-rtc 1
 ## Bootloader and Secure Boot
 <details> 
 <summary> UKI and Secure Boot </summary>
+
+### Edit mkinitcpio Configuration
+```
+sudo nano /etc/mkinitcpio.d/linux-cachyos.preset
+```
+### Comment:
+```
+default_image="...
+```
+### Uncomment and Set Path:
+```
+default_uki="/boot/EFI/Linux/cachy_uki.efi"
+```
+### Generate UKI
+```
+sudo mkinitcpio -P
+```
+### Add UEFI Boot Entry
+```
+sudo efibootmgr -c -d /dev/nvme<NUMBER> -p <PARTITION> -L CachyOS -l '\EFI\Linux\cachy_uki.efi'
+```
+### Remove Old Entries
+```
+sudo efibootmgr -b <ENTRY> -B
+```
+### Reboot to Ensure UKI Works
+```
+systemctl reboot
+```
+- ensure UKI shows up in UEFI boot menu
+### Uninstall systemd-boot
+```
+sudo bootctl remove
+```
+### Remove from /boot:
+- "loader" folder, any .img file, DO NOT remove **vmlinuz-linux** file.
+### Reset UEFI to Setup Mode
+```
+systemctl reboot --firmware-setup
+```
+### Install and Configure sbctl
+```
+sudo pacman -S sbctl
+sudo sbctl create-keys
+sudo sbctl enroll-keys --microsoft
+```
+### Determine Binaries to Sign
+```
+sudo sbctl verify
+```
+### Sign UKI and vmlinuz
+```
+sudo sbctl sign -s /boot/EFI/Linux/cachy_uki.efi
+sudo sbctl sign -s /boot/vmlinuz-linux
+```
+### Reboot to UEFI and Ensure Secure Boot is On
+```
+systemctl reboot --firmware-setup
+```
+### Verify
+```
+sudo bootctl
+```
 </details>
 
 <details>
 <summary> systemd-boot and Secure Boot </summary>
+
+### Copy Windows Boot Manager to systemd-boot
+```
+sudo mkdir /mnt/WinBoot
+sudo mount /dev/nvme<NUMBER> /mnt/WinBoot
+sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
+sudo umount /mnt/WinBoot
+sudo rm -r /mnt/WinBoot
+```
+### Reset UEFI to Setup Mode
+```
+systemctl reboot --firmware-setup
+```
+### Install and Configure sbctl
+```
+sudo pacman -S sbctl
+sudo sbctl create-keys
+sudo sbctl enroll-keys --microsoft
+```
+### Verify Binaries to Sign
+```
+sudo sbctl verify
+```
+### Batch Sign Binaries
+```
+sudo sbctl-batch-sign
+```
+### Reboot to UEFI and Ensure Secure Boot is On
+```
+systemctl reboot --firmware-setup
+```
+### Verify
+```
+sudo bootctl
+```
 </details>
 
 <details>
@@ -52,13 +150,13 @@ ENABLE_ENROLL_LIMINE_CONFIG=yes
 sudo limine-enroll-config
 sudo limine-update
 ```
-### To verify:
-```
-sudo sbctl status
-```
 ### Reboot to UEFI and Ensure Secure Boot is On
 ```
 systemctl reboot --firmware-setup
+```
+### Verify
+```
+sudo bootctl
 ```
 </details>
 
