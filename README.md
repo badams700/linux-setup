@@ -311,7 +311,7 @@ cd Projects/
 
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/<FILENAME>
 ```
-### Import via Settings
+- Import via Settings
 ## Game Locations
 ### FFXIV
 ```
