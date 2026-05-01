@@ -1,3 +1,5 @@
+# Linux Setup
+
 <details>
 <summary> CachyOS </summary>
   
