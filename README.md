@@ -223,7 +223,7 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/<FILENAME
 ~/.local/share/twintaillauncher/games/
 ```
 </details>
-
+---
 <details>
 <summary> Fedora </summary>
 
@@ -380,7 +380,7 @@ Just Perfection
 
 AppIndicator and KStatus
 </details>
-
+---
 <details>
 <summary> Homelab Server </summary>
   
@@ -409,3 +409,4 @@ ProtocolHeader = X-Forwarded-Proto
 ```
 Set Cockpit in NGINX to https
 </details>
+---
