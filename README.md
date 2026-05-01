@@ -1,4 +1,3 @@
-## Linux Setup
 ---
 
 <details>
