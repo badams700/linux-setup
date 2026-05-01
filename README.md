@@ -1,4 +1,4 @@
-# Linux Setup
+## Linux Setup
 ---
 
 <details>
