@@ -292,13 +292,13 @@ cd Orchis-kde/
 ```
 ## Fastfetch
 ```
-sudo mkdir ~/.config/fastfetch
+mkdir ~/.config/fastfetch
 ```
 ```
 cd ~/.config/fastfetch
 ```
 ```
-sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ```
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
@@ -309,7 +309,7 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.js
 ```
 cd Projects/
 
-sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/blur.kwinrule
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/blur.kwinrule
 ```
 - Import via Settings
 ## Game Locations
