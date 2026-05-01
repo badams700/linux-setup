@@ -303,7 +303,7 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.js
 ## KDE Layout
 ![KDE Layout](link_to_image)
 ### KDE Store
-- [ ] KDE Control Station
+- KDE Control Station
 ## KDE Blur
 ### Download
 ```
