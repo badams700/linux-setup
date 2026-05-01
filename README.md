@@ -17,7 +17,7 @@ sudo nano /etc/mkinitcpio.d/linux-cachyos.preset
 ```
 ### Comment:
 ```
-default_image="...
+default_image="/boot/initramfs-linux-cachyos.img"
 ```
 ### Uncomment and Set Path:
 ```
