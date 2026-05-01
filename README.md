@@ -1,5 +1,3 @@
----
-
 <details>
 <summary> CachyOS </summary>
   
