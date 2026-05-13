@@ -227,6 +227,12 @@ chmod +x install.sh
 
 sudo ./install.sh
 ```
+### Boot Arguments
+```
+sudo nano /etc/kernel/cmdline
+
+acpi_enforce_resources=lax
+```
 ### Configure RAM
 ```
 sudo i2cdetect -l
