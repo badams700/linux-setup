@@ -21,7 +21,14 @@ default_image="/boot/initramfs-linux-cachyos.img"
 ```
 ### Uncomment and Set Path:
 ```
-default_uki="/boot/EFI/Linux/cachy_uki.efi"
+default_uki="/boot/EFI/Linux/cachyos.efi"
+```
+### Edit Kernel Arguments
+```
+sudo nano /etc/kernel/cmdline
+```
+```
+acpi_enforce_resources=lax
 ```
 ### Generate UKI
 ```
@@ -29,7 +36,7 @@ sudo mkinitcpio -P
 ```
 ### Add UEFI Boot Entry
 ```
-sudo efibootmgr -c -d /dev/nvme<NUMBER> -p <PARTITION> -L CachyOS -l '\EFI\Linux\cachy_uki.efi'
+sudo efibootmgr -c -d /dev/nvme<NUMBER> -p <PARTITION> -L CachyOS -l '\EFI\Linux\cachyos.efi'
 ```
 ### Remove Old Entries
 ```
@@ -54,7 +61,7 @@ systemctl reboot --firmware-setup
 ```
 sudo pacman -S sbctl
 sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft
+sudo sbctl enroll-keys --microsoft --firmware-builtin
 ```
 ### Determine Binaries to Sign
 ```
@@ -62,7 +69,7 @@ sudo sbctl verify
 ```
 ### Sign UKI and vmlinuz
 ```
-sudo sbctl sign -s /boot/EFI/Linux/cachy_uki.efi
+sudo sbctl sign -s /boot/EFI/Linux/cachyos.efi
 sudo sbctl sign -s /boot/vmlinuz-linux
 ```
 ### Reboot to UEFI and Ensure Secure Boot is On
@@ -86,6 +93,13 @@ sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
 sudo umount /mnt/WinBoot
 sudo rm -r /mnt/WinBoot
 ```
+### Edit Kernel Arguments
+```
+sudo nano /etc/kernel/cmdline
+```
+```
+acpi_enforce_resources=lax
+```
 ### Reset UEFI to Setup Mode
 ```
 systemctl reboot --firmware-setup
@@ -94,7 +108,7 @@ systemctl reboot --firmware-setup
 ```
 sudo pacman -S sbctl
 sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft
+sudo sbctl enroll-keys --microsoft --firmware-builtin
 ```
 ### Verify Binaries to Sign
 ```
@@ -118,7 +132,6 @@ sudo bootctl
 <summary> Limine and Secure Boot <br/></summary>
 
 ### Edit Limine config file
-  
 ```
 sudo nano /boot/limine.conf
 ```
@@ -135,15 +148,16 @@ systemctl reboot --firmware-setup
 ```
 sudo pacman -S sbctl
 sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft
+sudo sbctl enroll-keys --microsoft --firmware-builtin
 ```
 ### Configure Limine
 ```
 sudo nano /etc/default/limine
 ```
-### Add the following line:
+### Add the following line and kernel argument:
 ```
 ENABLE_ENROLL_LIMINE_CONFIG=yes
+acpi_enforce_resources=lax
 ```
 ### Sign Limine
 ```
@@ -196,21 +210,24 @@ Server = https://repo.cider.sh/arch
 sudo pacman -Syu
 ```
 ## Bulk Install Programs
-### yay / pacman
+### yay
 ```
-yay -S --needed --noconfirm 1password blender bottles calibre cider cmake darkly discord ffmpeg flatpak gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager tailscale terminus-font thunderbird transmission-gtk trayscale twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk papirus-icon-theme plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar
+yay -S --needed flatpak
 ```
-### Install OBS Separately
 ```
-yay -S obs-studio-browser
+yay -S --needed obs-studio-browser
+```
+```
+yay -S --needed --noconfirm blender bottles calibre cider cmake darkly discord ffmpeg gimp git go handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager terminus-font thunderbird transmission-gtk twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar proton-pass xwaylandvideobridge
 ```
 ### Flatpak
 ```
-flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.jellyfin.JellyfinDesktop
+flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.jellyfin.JellyfinDesktop io.github.maniacx.BudsLink
 ```
 ## Console Font
 ```
-sudo echo "FONT=ter-132b" >> /etc/vconsole.conf
+sudo nano /etc/vconsole.conf
+FONT=ter-132b
 ```
 ## OpenLinkHub - Corsair
 ### Build + Install
@@ -227,12 +244,6 @@ chmod +x install.sh
 
 sudo ./install.sh
 ```
-### Boot Arguments
-```
-sudo nano /etc/kernel/cmdline
-
-acpi_enforce_resources=lax
-```
 ### Configure RAM
 ```
 sudo i2cdetect -l
@@ -247,7 +258,7 @@ sudo nano /opt/OpenLinkHub/config.json
 ```
 ### Udev Rules
 ```
-echo 'KERNEL=="i2c-<NUMBER>", MODE="0600", OWNER="openlinkhub" | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
+echo 'KERNEL=="i2c-9", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
@@ -310,6 +321,8 @@ wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ![KDE Layout](kde_layout.png)
 ### KDE Store
 - KDE Control Station
+- Papirus Icons
+
 ## KDE Blur
 ### Download
 ```
