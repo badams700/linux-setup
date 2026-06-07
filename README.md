@@ -196,6 +196,14 @@ sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
 ```
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
 ```
+### Import xwaylandvideobridge key
+```
+cd Projects/
+
+wget
+
+gpg --import e0a3eb202f8e57528e13e72fd7574483bb57b18d.asc
+```
 ### Add Cider Repo
 ```
 sudo nano /etc/pacman.conf
@@ -218,7 +226,11 @@ yay -S --needed flatpak
 yay -S --needed obs-studio-browser
 ```
 ```
-yay -S --needed --noconfirm blender bottles calibre cider cmake darkly discord ffmpeg gimp git go handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager terminus-font thunderbird transmission-gtk twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom brave-bin kwin-effects-better-blur-dx deja-dup cava jre-openjdk plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar proton-pass xwaylandvideobridge
+yay -S --needed --noconfirm blender cider cmake darkly discord ffmpeg gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager terminus-font thunderbird transmission-gtk twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom kwin-effects-better-blur-dx deja-dup cava jre-openjdk plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar proton-pass proton-vpn-gtk-app xwaylandvideobridge
+```
+### Calibre
+```
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 ```
 ### Flatpak
 ```
