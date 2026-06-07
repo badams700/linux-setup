@@ -200,7 +200,7 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
 ```
 cd Projects/
 
-wget
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/e0a3eb202f8e57528e13e72fd7574483bb57b18d.asc
 
 gpg --import e0a3eb202f8e57528e13e72fd7574483bb57b18d.asc
 ```
