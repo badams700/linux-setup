@@ -236,6 +236,12 @@ sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | 
 ```
 flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.jellyfin.JellyfinDesktop io.github.maniacx.BudsLink
 ```
+### Minecraft Complementary Shaders
+```
+cd Downloads/
+
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/Complementary-Installer-1.3.0.jar
+```
 ## Console Font
 ```
 sudo nano /etc/vconsole.conf
