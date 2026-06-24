@@ -196,14 +196,6 @@ sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
 ```
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
 ```
-### Import xwaylandvideobridge key
-```
-cd Projects/
-
-wget https://raw.githubusercontent.com/badams700/linux-setup/main/e0a3eb202f8e57528e13e72fd7574483bb57b18d.asc
-
-gpg --import e0a3eb202f8e57528e13e72fd7574483bb57b18d.asc
-```
 ### Add Cider Repo
 ```
 sudo nano /etc/pacman.conf
@@ -220,21 +212,39 @@ sudo pacman -Syu
 ## Bulk Install Programs
 ### yay
 ```
-yay -S --needed flatpak
+sudo pacman -S flatpak
+
+sudo pacman -S obs-studio browser
+
+sudo pacman -S amdgpu_top bazaar blender calf cava cider cmake deja-dup discord easyeffects ffmpeg gimp git go handbrake jre-openjdk lsp-plugins-lv2 mda.lv2 mission-center npm obsidian okular onlyoffice-bin openssh protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk vlc zam-plugins
 ```
+### AUR
 ```
-yay -S --needed obs-studio-browser
-```
-```
-yay -S --needed --noconfirm blender cider cmake darkly discord ffmpeg gimp git go google-chrome handbrake minecraft-launcher mission-center npm obsidian onlyoffice-bin openssh rpi-imager terminus-font thunderbird transmission-gtk twintaillauncher-bin virt-manager visual-studio-code-bin vlc xivlauncher zoom kwin-effects-better-blur-dx deja-dup cava jre-openjdk plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar proton-pass proton-vpn-gtk-app xwaylandvideobridge
+yay -S darkly google-chrome kwin-effects-better-blur-dx minecraft-launcher plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
 ```
 ### Calibre
 ```
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 ```
+### Proton Mail Bridge
+```
+cd Projects/
+
+mkdir protonmail
+
+cd protonmail
+
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/PKGBUILD
+
+makepkg -si
+```
 ### Flatpak
 ```
-flatpak install flathub com.github.tenderowl.frog io.github.alainm23.planify io.github.kolunmi.Bazaar io.github.wartybix.Constrict it.mijorus.gearlever org.jellyfin.JellyfinDesktop io.github.maniacx.BudsLink
+BudsLink, Constrict, Flatseal, Frog, Gear Lever, Jellyfin Desktop, Laser, MakeMKV, Planify, Yubico Authenticator
+```
+### Easy Effects Presets
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/JackHack96/EasyEffects-Presets/master/install.sh)"
 ```
 ## Console Font
 ```
@@ -270,7 +280,7 @@ sudo nano /opt/OpenLinkHub/config.json
 ```
 ### Udev Rules
 ```
-echo 'KERNEL=="i2c-9", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
+echo 'KERNEL=="i2c-11", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
@@ -322,11 +332,9 @@ cd Orchis-kde/
 ## Fastfetch
 ```
 mkdir ~/.config/fastfetch
-```
-```
+
 cd ~/.config/fastfetch
-```
-```
+
 wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ```
 ## KDE Layout
