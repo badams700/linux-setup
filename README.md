@@ -192,10 +192,6 @@ makepkg -si
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
 sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
 ```
-### Import 1Password Signing Key
-```
-curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
-```
 ### Add Cider Repo
 ```
 sudo nano /etc/pacman.conf
