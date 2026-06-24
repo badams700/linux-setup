@@ -206,7 +206,7 @@ Server = https://repo.cider.sh/arch
 sudo pacman -Syu
 ```
 ## Bulk Install Programs
-### yay
+### Pacman
 ```
 sudo pacman -S flatpak
 
