@@ -212,11 +212,11 @@ sudo pacman -S flatpak
 
 sudo pacman -S obs-studio browser
 
-sudo pacman -S amdgpu_top bazaar blender btrfs-assistant btrfsmaintenance calf cava cider cmake deja-dup discord dolphin-plugins easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh protonplus proton-pass proton-vpn-gtk-app rpi-imager snapper terminus-font thunderbird transmission-gtk vlc zam-plugins
+sudo pacman -S amdgpu_top bazaar blender btrfs-assistant btrfsmaintenance calf cava cider cmake deja-dup discord dolphin-plugins easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager snapper terminus-font thunderbird transmission-gtk vlc zam-plugins
 ```
 ### AUR
 ```
-yay -S darkly google-chrome kwin-effects-better-blur-dx minecraft-launcher plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
+yay -S darkly google-chrome kwin-effects-better-blur-dx plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
 ```
 ### Calibre
 ```
@@ -311,9 +311,9 @@ git checkout plasma6.3
 ```
 cd Projects/
 
-sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
+sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/WallpaperEngine_kde6-1.1j-1-x86_64.pkg.tar.zst
 
-sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
+sudo pacman -U ./WallpaperEngine_kde6-1.1j-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
 ## Orchis
 ```
