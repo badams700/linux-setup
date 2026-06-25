@@ -212,7 +212,7 @@ sudo pacman -S flatpak
 
 sudo pacman -S obs-studio browser
 
-sudo pacman -S amdgpu_top bazaar blender btrfs-assistant btrfsmaintenance calf cava cider cmake deja-dup discord dolphin-plugins easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk lsp-plugins-lv2 mda.lv2 mission-center npm obsidian okular onlyoffice-bin openssh protonplus proton-pass proton-vpn-gtk-app rpi-imager snapper terminus-font thunderbird transmission-gtk vlc zam-plugins
+sudo pacman -S amdgpu_top bazaar blender btrfs-assistant btrfsmaintenance calf cava cider cmake deja-dup discord dolphin-plugins easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh protonplus proton-pass proton-vpn-gtk-app rpi-imager snapper terminus-font thunderbird transmission-gtk vlc zam-plugins
 ```
 ### AUR
 ```
