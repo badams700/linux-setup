@@ -311,9 +311,9 @@ git checkout plasma6.3
 ```
 cd Projects/
 
-sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.9/WallpaperEngine_kde6-1.1j-1-x86_64.pkg.tar.zst
+sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
 
-sudo pacman -U ./WallpaperEngine_kde6-1.1j-1-x86_64.pkg.tar.zst --overwrite '*'
+sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
 ## Orchis
 ```
