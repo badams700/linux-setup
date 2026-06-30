@@ -181,7 +181,7 @@ sudo pacman -Rs paru
 ```
 ### Install yay
 ```
-cd Projects/
+cd ~/Projects
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -224,7 +224,7 @@ sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | 
 ```
 ### Proton Mail Bridge
 ```
-cd Projects/
+cd ~/Projects
 
 mkdir protonmail
 
@@ -250,7 +250,7 @@ FONT=ter-132b
 ## OpenLinkHub - Corsair
 ### Build + Install
 ```
-cd Projects/
+cd ~/Projects
 
 git clone https://github.com/jurkovic-nikola/OpenLinkHub.git
 
@@ -296,7 +296,7 @@ sudo nano /etc/fstab
 ```
 ## Klassy
 ```
-cd Projects/
+cd ~/Projects
 
 git clone https://github.com/paulmcauley/klassy
 
@@ -309,7 +309,7 @@ git checkout plasma6.3
 ## KDE Wallpaper Engine
 ### Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
 ```
-cd Projects/
+cd ~/Projects
 
 sudo wget https://github.com/slynobody/SteamOS-wallpaper-engine-kde-plugin/releases/download/0.55d_arch/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
 
@@ -317,7 +317,7 @@ sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
 ## Orchis
 ```
-cd Projects/
+cd ~/Projects
 
 git clone https://github.com/vinceliuice/Orchis-kde
 
@@ -342,7 +342,7 @@ wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ## KDE Blur
 ### Download
 ```
-cd Projects/
+cd ~/Projects
 
 wget https://raw.githubusercontent.com/badams700/linux-setup/main/blur.kwinrule
 ```
