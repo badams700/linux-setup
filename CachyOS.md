@@ -221,7 +221,7 @@ mkdir protonmail
 
 cd protonmail
 
-wget https://raw.githubusercontent.com/badams700/linux-setup/main/PKGBUILD
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/PKGBUILD
 
 makepkg -si
 ```
@@ -306,7 +306,7 @@ git checkout plasma6.3
 ```
 cd ~/Projects
 
-sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/WallpaperEngine_kde6-1.1i-1-x86_64.pkg.tar.zst
+sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/WallpaperEngine_kde6-1.1i-1-x86_64.pkg.tar.zst
 
 sudo pacman -U ./WallpaperEngine_kde6-1.1i-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
@@ -326,7 +326,7 @@ mkdir ~/.config/fastfetch
 
 cd ~/.config/fastfetch
 
-wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.jsonc
 ```
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
@@ -336,6 +336,6 @@ wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ```
 cd ~/Projects
 
-wget https://raw.githubusercontent.com/badams700/linux-setup/main/blur.kwinrule
+wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwinrule
 ```
 - Import via Settings
