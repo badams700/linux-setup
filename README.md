@@ -319,7 +319,7 @@ sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
 cd ~/Projects
 
-git clone https://github.com/vinceliuice/Orchis-kde
+git clone https://github.com/badams700/Orchis-kde
 
 cd Orchis-kde/
 
