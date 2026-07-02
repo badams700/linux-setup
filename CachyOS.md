@@ -203,7 +203,7 @@ sudo pacman -S flatpak
 
 sudo pacman -S obs-studio browser
 
-sudo pacman -S amdgpu_top blender calf cava cdrdao cdrtools cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk k3b lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc zam-plugins
+sudo pacman -S amdgpu_top blender calf cava cdrdao cdrtools cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools dysk easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk k3b lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc zam-plugins
 ```
 ### AUR
 ```
