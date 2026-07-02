@@ -1,5 +1,3 @@
-<summary> CachyOS </summary>
-  
 ## Time Sync with Windows
 ```
 timedatectl set-local-rtc 1
