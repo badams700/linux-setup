@@ -311,7 +311,7 @@ git checkout plasma6.3
 ```
 cd ~/Projects
 
-sudo wget https://github.com/badams700/linux-setup/main/WallpaperEngine_kde6-1.1i-1-x86_64.pkg.tar.zst
+sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/WallpaperEngine_kde6-1.1i-1-x86_64.pkg.tar.zst
 
 sudo pacman -U ./WallpaperEngine_kde6-1.1i-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
