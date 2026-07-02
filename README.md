@@ -175,10 +175,6 @@ sudo bootctl
 </details>
 
 ## AUR Helper
-### Remove paru
-```
-sudo pacman -Rs paru
-```
 ### Install yay
 ```
 cd ~/Projects
@@ -212,11 +208,11 @@ sudo pacman -S flatpak
 
 sudo pacman -S obs-studio browser
 
-sudo pacman -S amdgpu_top bazaar blender btrfs-assistant btrfsmaintenance calf cava cdrdao cdrtools cider cmake deja-dup discord dolphin-plugins dvd+rw-tools easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk k3b lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager snapper terminus-font thunderbird transmission-gtk vlc zam-plugins
+sudo pacman -S amdgpu_top blender calf cava cdrdao cdrtools cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk k3b lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc zam-plugins
 ```
 ### AUR
 ```
-yay -S darkly google-chrome kwin-effects-better-blur-dx plasma6-applets-kurve plasma6-applets-panel-colorizer plasma6-applets-plasmusic-toolbar qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
+yay -S darkly google-chrome kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
 ```
 ### Calibre
 ```
@@ -236,7 +232,11 @@ makepkg -si
 ```
 ### Flatpak
 ```
-BudsLink, Constrict, Flatseal, Frog, Gear Lever, Jellyfin Desktop, Laser, MakeMKV, Planify, Yubico Authenticator
+BudsLink, Constrict, Curtail, Flatseal, Frog, Gear Lever, Jellyfin Desktop, MakeMKV, Planify, Yubico Authenticator, Zen Browser
+```
+### KDE Discover
+```
+Kurve, Panel Colorizer, Plasmusic Toolbar, KDE Control Station, Simple Separator, Papirus Icons
 ```
 ### Easy Effects Presets
 ```
@@ -335,9 +335,6 @@ wget https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
 ```
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
-### KDE Store
-- KDE Control Station
-- Papirus Icons
 
 ## KDE Blur
 ### Download
@@ -347,15 +344,7 @@ cd ~/Projects
 wget https://raw.githubusercontent.com/badams700/linux-setup/main/blur.kwinrule
 ```
 - Import via Settings
-## Game Locations
-### FFXIV
-```
-~/.xlcore/
-```
-### TwinTail
-```
-~/.local/share/twintaillauncher/games/
-```
+
 </details>
 
 ---
