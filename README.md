@@ -307,7 +307,7 @@ git checkout plasma6.3
 ./install.sh
 ```
 ## KDE Wallpaper Engine
-### Install Wallpaper Engine via Steam - use Windows 7 compatibility mode 
+### Install Wallpaper Engine via Steam
 ```
 cd ~/Projects
 
