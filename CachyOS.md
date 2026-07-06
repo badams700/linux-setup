@@ -48,6 +48,7 @@ sudo nano Desktop/steam_dev.cfg
 ```
 unShaderBackgroundProcessingThreads 16
 ```
+copy to ~/.local/share/Steam once Steam is installed
 ## Bootloader and Secure Boot
 <details>
 <summary> systemd-boot and Secure Boot </summary>
