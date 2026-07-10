@@ -1,9 +1,4 @@
 ```
-timedatectl set-local-rtc 1 \
-sudo cp /etc/limine-snapper-sync.conf /etc/limine-snapper-sync.conf.orig \
-cd /etc \
-sudo rm limine-snapper-sync.conf \
-sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/limine-snapper-sync.conf \
 cd ~/.config \
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf \
 sudo pacman -S qemu-full virt-manager swtpm \
