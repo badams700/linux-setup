@@ -1,4 +1,4 @@
-```
+#! /bin/bash
 cd ~/.config \
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf \
 sudo pacman -S qemu-full virt-manager swtpm \
@@ -53,4 +53,3 @@ wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwi
 cd ~/Projects \
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst \
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
-```
