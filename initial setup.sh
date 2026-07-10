@@ -13,7 +13,7 @@ sudo sed -i '[]c\[wallpaper syntax]' /boot/limine.conf
 sudo pacman -S sbctl \
 sudo sbctl create-keys \
 sudo sbctl enroll-keys -m -f \
-# add acpi_enforce_resources=lax and amdgpu.dcfeaturemask=0x402 to /etc/default/limine
+sudo sed -i '/^CMDLINE=/s/"[^"]*"/"& acpi_enforce_resources=lax amdgpu.dcfeaturemask=0x402"/' /etc/default/limine \
 echo 'ENABLE_ENROLL_LIMINE_CONFIG=yes' | sudo tee -a /etc/default/limine \
 sudo limine-enroll-config \
 sudo limine-update \
