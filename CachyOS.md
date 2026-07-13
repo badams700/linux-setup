@@ -17,15 +17,6 @@ sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/m
 ```
 - Move to ~/.local/share/Steam once installed
 
-chrome-flags.conf
---ignore-gpu-blocklist
---enable-gpu-rasterization
---enable-zero-copy
---ozone-platform-hint=auto
---use-gl=angle
---use-angle=vulkan
---enable-features=VaapiVideoDecoder,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoEncoder,VaapiIgnoreDriverChecks,UseMultiPlaneFormatForHardwareVideo,Vulkan,VulkanFromANGLE,DefaultANGLEVulkan
-
 ## QEMU VM
 ```
 sudo pacman -S qemu-full virt-manager swtpm
