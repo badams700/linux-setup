@@ -36,6 +36,7 @@ systemctl enable --now libvirtd.socket
 sudo virsh net-autostart default
 sudo ufw route allow from 192.168.122.0/24
 ```
+
 ## Bootloader and Secure Boot
 ### Install Kernels and Utilities
 ```
@@ -49,30 +50,22 @@ lsblk
 ### Copy Windows Boot Manager to EFI
 ```
 sudo mkdir /mnt/WinBoot
-sudo mount **PATH** /mnt/WinBoot
+sudo mount *PATH* /mnt/WinBoot
 sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
 sudo umount /mnt/WinBoot
 sudo rm -r /mnt/WinBoot
 ```
 ### Edit Kernel Arguments
-```
-sudo nano /etc/kernel/cmdline
-```
-```
+/etc/kernel/cmdline
 acpi_enforce_resources=lax amdgpu.dcfeaturemask=0x402
+### Configure UKI
 ```
-### Reset UEFI to Setup Mode
+
 ```
-systemctl reboot --firmware-setup
+### Configure sbctl
 ```
-### Install and Configure sbctl
-```
-sudo pacman -S sbctl
 sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft --firmware-builtin
-```
-### Verify Binaries to Sign
-```
+sudo sbctl enroll-keys -m -f
 sudo sbctl verify
 ```
 ### Batch Sign Binaries
