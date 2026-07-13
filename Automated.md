@@ -10,7 +10,7 @@ sudo pacman -S btrfs-assistant snapper snap-pac
 ## 3. Configurations
 ```
 sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
-sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/steam_dev.cfg
+sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/main/Files/steam_dev.cfg
 sudo pacman -S qemu-full virt-manager swtpm
 echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
 sudo usermod -aG libvirt $USER
