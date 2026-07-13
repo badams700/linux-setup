@@ -1,5 +1,6 @@
 #! /bin/bash
 timedatectl set-local-rtc 1
+pacman -S --noconfirm btrfs-assistant snapper snap-pac
 pacman -S --noconfirm sbctl systemd-ukify
 sed -i '2c\timeout 1' /boot/loader/loader.conf
 sed -i '3c\console-mode max' /boot/loader/loader.conf
