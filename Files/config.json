@@ -1,1 +1,2 @@
-
+sudo dmidecode -t memory | grep 'Part Number'
+CMH32GX5M2B6400C36
