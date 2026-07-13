@@ -3,6 +3,9 @@
 timedatectl set-local-rtc 1
 ```
 ## BTRFS Snapshots 
+```
+sudo pacman -S btrfs-assistant snapper snap-pac
+```
 - Btrfs Assistant
 - Snapper Settings
 - Number: 10
@@ -34,10 +37,16 @@ sudo virsh net-autostart default
 sudo ufw route allow from 192.168.122.0/24
 ```
 ## Bootloader and Secure Boot
-<details>
-<summary> systemd-boot and Secure Boot </summary>
-
-### Copy Windows Boot Manager to systemd-boot
+### Install Kernels and Utilities
+```
+sudo pacman -Rs linux-cachyos-lts linux-cachyos-lts-headers
+sudo pacman -S linux-cachyos-rc linux-cachyos-rc-headers sbctl systemd-ukify
+```
+### Identify Path of Windows EFI
+```
+lsblk
+```
+### Copy Windows Boot Manager to EFI
 ```
 sudo mkdir /mnt/WinBoot
 sudo mount /dev/nvme<NUMBER> /mnt/WinBoot
@@ -50,7 +59,7 @@ sudo rm -r /mnt/WinBoot
 sudo nano /etc/kernel/cmdline
 ```
 ```
-acpi_enforce_resources=lax
+acpi_enforce_resources=lax amdgpu.dcfeaturemask=0x402
 ```
 ### Reset UEFI to Setup Mode
 ```
@@ -78,53 +87,6 @@ systemctl reboot --firmware-setup
 ```
 sudo bootctl
 ```
-</details>
-
-<details>
-<summary> Limine and Secure Boot <br/></summary>
-
-### Edit Limine config file
-```
-sudo nano /boot/limine.conf
-```
-### Edit the following lines:
-```
-term_background: 00000000
-- remove wallpaper line
-```
-### Reset UEFI to Setup Mode
-```
-systemctl reboot --firmware-setup
-```
-### Install and configure sbctl
-```
-sudo pacman -S sbctl
-sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft --firmware-builtin
-```
-### Configure Limine
-```
-sudo nano /etc/default/limine
-```
-### Add the following line and kernel argument:
-```
-ENABLE_ENROLL_LIMINE_CONFIG=yes
-acpi_enforce_resources=lax
-```
-### Sign Limine
-```
-sudo limine-enroll-config
-sudo limine-update
-```
-### Reboot to UEFI and Ensure Secure Boot is On
-```
-systemctl reboot --firmware-setup
-```
-### Verify
-```
-sudo bootctl
-```
-</details>
 
 ## AUR Helper
 ### Install yay
