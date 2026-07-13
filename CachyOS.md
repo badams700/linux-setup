@@ -10,6 +10,7 @@ sudo pacman -S --needed --noconfirm btrfs-assistant snapper snap-pac
 - BTRFS Assistant
 - Snapper Settings
 - Number: 10
+- Create a snapshot of the base install
 ## Hardware Acceleration Scripts
 ```
 sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
