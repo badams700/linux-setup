@@ -113,7 +113,7 @@ CGO_CFLAGS_ALLOW='-fno-strict-overflow' go build .
 chmod +x install.sh
 sudo ./install.sh
 ```
-sudo dmidecode -t memory | grep 'Part Number'
+
 ### Add Memory Info
 ```
 sudo rm /opt/OpenLinkHub/config.json
