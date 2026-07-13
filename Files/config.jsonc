@@ -61,11 +61,6 @@
             "keyColor": "yellow"
         },
         {
-            "type": "bios",
-            "key": "│ ├󰖡 ",
-            "keyColor": "yellow"
-        },
-        {
             "type": "packages",
             "key": "│ ├󰏗 ",
             "keyColor": "yellow"
@@ -97,18 +92,13 @@
             "keyColor": "blue"
         },
         {
-            "type": "terminal",
-            "key": "└ └󰆍 ",
-            "keyColor": "blue"
-        },
-        {
             "type": "custom",
             "format": "\u001b[90m└────────────────────────────────────────────────────┘"
         },
         "break",
         {
             "type": "custom",
-            "format": "\u001b[90m┌────────────────────Uptime / Age / DT────────────────────┐"
+            "format": "\u001b[90m┌────────────────────Uptime / Age / DT──────────────┐"
         },
         {
             "type": "command",
@@ -128,7 +118,7 @@
         },
         {
             "type": "custom",
-            "format": "\u001b[90m└─────────────────────────────────────────────────────────┘"
+            "format": "\u001b[90m└──────────────────────────────────────────────────┘"
         },
         {
             "type": "colors",
