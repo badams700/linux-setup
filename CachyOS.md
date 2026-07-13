@@ -3,21 +3,10 @@
 timedatectl set-local-rtc 1
 ```
 ## BTRFS Snapshots 
-```
 - Btrfs Assistant
 - Snapper Settings
 - Number: 10
-```
-```
-sudo cp /etc/limine-snapper-sync.conf /etc/limine-snapper-sync.conf.orig
 
-sudo nano /etc/limine-snapper-sync.conf
-```
-```
-MAX_SNAPSHOT_ENTRIES=10
-
-SNAPSHOT_FORMAT_CHOICE=8
-```
 ## Hardware Acceleration
 ```
 sudo nano ~/.config/chrome-flags.conf
