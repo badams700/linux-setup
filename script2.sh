@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Running setup script 2."
 sleep 5
 
