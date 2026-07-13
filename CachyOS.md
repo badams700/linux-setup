@@ -112,10 +112,6 @@ cd OpenLinkHub/
 CGO_CFLAGS_ALLOW='-fno-strict-overflow' go build .
 chmod +x install.sh
 sudo ./install.sh
-```
-
-### Add Memory Info
-```
 sudo rm /opt/OpenLinkHub/config.json
 sudo wget -P /opt/OpenLinkHub/ https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.json
 echo 'KERNEL=="i2c-18", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
