@@ -18,4 +18,7 @@ systemctl enable --now libvirtd.service
 systemctl enable --now libvirtd.socket
 sudo virsh net-autostart default
 sudo ufw route allow from 192.168.122.0/24
+lsblk
 ```
+### 4. Note Path of Windows EFI
+## 5. Secure Boot
