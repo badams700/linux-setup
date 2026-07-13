@@ -9,9 +9,12 @@ timedatectl set-local-rtc 1
 
 ## Hardware Acceleration
 ```
-sudo nano ~/.config/chrome-flags.conf
+sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Filea/chrome-flags.conf
+sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/main/Filea/steam_dev.cfg
 ```
-```
+- Move to ~/.local/share/Steam once installed
+
+chrome-flags.conf
 --ignore-gpu-blocklist
 --enable-gpu-rasterization
 --enable-zero-copy
@@ -19,8 +22,8 @@ sudo nano ~/.config/chrome-flags.conf
 --use-gl=angle
 --use-angle=vulkan
 --enable-features=VaapiVideoDecoder,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoEncoder,VaapiIgnoreDriverChecks,UseMultiPlaneFormatForHardwareVideo,Vulkan,VulkanFromANGLE,DefaultANGLEVulkan
-```
-## QEMU VMM
+
+## QEMU VM
 ```
 sudo pacman -S qemu-full virt-manager swtpm
 echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
@@ -30,14 +33,6 @@ systemctl enable --now libvirtd.socket
 sudo virsh net-autostart default
 sudo ufw route allow from 192.168.122.0/24
 ```
-## Steam - Vulkan Shaders
-```
-sudo nano Desktop/steam_dev.cfg
-```
-```
-unShaderBackgroundProcessingThreads 16
-```
-copy to ~/.local/share/Steam once Steam is installed
 ## Bootloader and Secure Boot
 <details>
 <summary> systemd-boot and Secure Boot </summary>
