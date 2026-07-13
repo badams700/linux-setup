@@ -10,7 +10,7 @@ sleep 5
 timedatectl set-local-rtc 1
 
 echo "Setting up BTRFS Snapshots..."
-pacman -S btrfs-assistant snapper snap-pac
+pacman -S --needed --noconfirm btrfs-assistant snapper snap-pac
 echo "Please set up snapshots in BTRFS Assistant."
 read -r -p "Press enter when complete."
 
@@ -23,7 +23,7 @@ cp ~/Projects/linux-setup/Files/steam_dev.cfg ~/Desktop
 # QEMU
 echo "Installing Virtual Machine Packages..."
 sleep 5
-pacman -S --noconfirm qemu-full virt-manager swtpm
+pacman -S --needed --noconfirm qemu-full virt-manager swtpm
 echo 'firewall_backend = "iptables"' | tee -a /etc/libvirt/network.conf
 usermod -aG libvirt $USER
 systemctl enable --now libvirtd.service
@@ -34,8 +34,8 @@ ufw route allow from 192.168.122.0/24
 # Bootloader and Secure Boot
 echo "Setting up Secure Boot..."
 sleep 5
-pacman -Rs linux-cachyos-lts linux-cachyos-lts-headers
-pacman -S linux-cachyos-rc linux-cachyos-rc-headers sbctl systemd-ukify
+pacman -Rs --noconfirm linux-cachyos-lts linux-cachyos-lts-headers
+pacman -S --needed --noconfirm linux-cachyos-rc linux-cachyos-rc-headers sbctl systemd-ukify
 mkdir /mnt/WinBoot
 mount /dev/${WIN_EFI} /mnt/WinBoot
 cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
