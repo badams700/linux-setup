@@ -55,12 +55,18 @@ sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
 sudo umount /mnt/WinBoot
 sudo rm -r /mnt/WinBoot
 ```
-### Edit Kernel Arguments
-/etc/kernel/cmdline
-acpi_enforce_resources=lax amdgpu.dcfeaturemask=0x402
 ### Configure UKI
 ```
-
+sudo sed -i '2c\timeout 1' /boot/loader/loader.conf
+sudo sed -i '3c\console-mode max' /boot/loader/loader.conf
+sudo sed -i '11c\#default_image="/boot/initramfs-linux-cachyos.img"' /etc/mkinitcpio.d/linux-cachyos.preset
+sudo sed -i '12c\default_uki="/boot/EFI/Linux/cachyos.efi"' /etc/mkinitcpio.d/linux-cachyos.preset
+sudo sed -i '11c\#default_image="/boot/initramfs-linux-cachyos-rc.img"' /etc/mkinitcpio.d/linux-cachyos-rc.preset
+sudo sed -i '12c\default_uki="/boot/EFI/Linux/cachyos-rc.efi"' /etc/mkinitcpio.d/linux-cachyos-rc.preset
+sudo sed -i 's/$/ acpi_enforce_resources=lax amdgpu.dcfeaturemask=0x402/' /etc/kernel/cmdline
+sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-cachyos-lts.img /boot/initramfs-linux-cachyos-rc.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-lts.conf /boot/loader/entries/linux-cachyos-rc.conf
+sudo rm -r /boot/*KERNEL IMAGE FOLDER*
+sudo mkinitcpio -P
 ```
 ### Configure sbctl
 ```
@@ -89,33 +95,22 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
-## Signing Keys and Repos
-### Import Cider Signing Key
+### Cider Signing Key and Repo
 ```
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
 sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
+echo '[cidercollective]' | sudo tee -a /etc/pacman.conf
+echo 'SigLevel = Required TrustedOnly' | sudo tee -a /etc/pacman.conf
+echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 ```
-### Add Cider Repo
+## Install Programs
 ```
-sudo nano /etc/pacman.conf
-```
-```
-[cidercollective]
-SigLevel = Required TrustedOnly
-Server = https://repo.cider.sh/arch
-```
-### Refresh pacman
-```
-sudo pacman -Syu
-```
-## Bulk Install Programs
-```
-yay -S flatpak obs-studio-browser amdgpu_top blender calf cava cdrdao cdrtools cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools dysk easyeffects extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk k3b lsp-plugins-lv2 mda.lv2 mission-center npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc zam-plugins darkly google-chrome kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom && sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin && cd ~/Projects && wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/PKGBUILD && makepkg -si && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen && bash -c "$(curl -fsSL https://raw.githubusercontent.com/JackHack96/EasyEffects-Presets/master/install.sh)"
+sudo pacman -Syu --needed --noconfirm flatpak obs-studio-browser amdgpu_top blender calibre cava cdrdao cdrtools cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg gimp git go handbrake jre-openjdk k3b npm ntfs-3g ntfsprogs obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
+yay -S --needed --noconfirm darkly google-chrome kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
+flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen
 ```
 ### KDE Discover
-```
-Kurve, Panel Colorizer, Plasmusic Toolbar, KDE Control Station, Simple Separator, Papirus Icons
-```
+- Kurve, Panel Colorizer, Plasmusic Toolbar, KDE Control Station, Simple Separator, Papirus Icons
 ## Console Font
 ```
 sudo nano /etc/vconsole.conf
