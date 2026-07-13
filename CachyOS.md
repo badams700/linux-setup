@@ -46,6 +46,7 @@ console-mode max
 ```
 ## Configure mkinitcpio for UKI
 /etc/mkinitcpio.d/linux-cachyos.preset
+
 /etc/mkinitcpio.d/linux-cachyos-rc.preset
 ```
 #default_image="/boot/initramfs-linux-cachyos.img"
