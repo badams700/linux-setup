@@ -49,7 +49,7 @@ lsblk
 ### Copy Windows Boot Manager to EFI
 ```
 sudo mkdir /mnt/WinBoot
-sudo mount /dev/nvme<NUMBER> /mnt/WinBoot
+sudo mount **PATH** /mnt/WinBoot
 sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
 sudo umount /mnt/WinBoot
 sudo rm -r /mnt/WinBoot
