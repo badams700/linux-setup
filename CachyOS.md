@@ -118,16 +118,16 @@ flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constri
 cd ~/Projects
 git clone https://github.com/jurkovic-nikola/OpenLinkHub.git
 cd OpenLinkHub/
-CGO_CLAGS_ALLOW='-fno-strict-overflow' go build .
-chmod +x install.sh
-./install.sh
+CGO_CFLAGS_ALLOW='-fno-strict-overflow' go build .
+sudo chmod +x install.sh
+sudo ./install.sh
 ```
 ```
 sudo rm /opt/OpenLinkHub/config.json
 sudo wget -P /opt/OpenLinkHub https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.json
 ```
 ```
-echo 'KERNEL=="i2c-18", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
+echo 'KERNEL=="i2c-11", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 sudo systemctl restart OpenLinkHub.service
