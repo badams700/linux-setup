@@ -104,7 +104,7 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
-sudo pacman -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools cider cmake deja-dup discord dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
+sudo pacman -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools cider cmake deja-dup discord dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
 ```
 ```
 yay -S --needed --noconfirm google-chrome qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
