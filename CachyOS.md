@@ -152,6 +152,7 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 # DE-specific
 ## KDE
 ```
+yay -S --needed --noconfirm discover dolphin-plugins okular darkly kwin-effects-better-blur-dx
 cd ~/Projects
 git clone https://github.com/paulmcauley/klassy
 cd klassy
@@ -164,11 +165,6 @@ cd ~/Projects
 git clone https://github.com/badams700/Orchis-kde
 cd Orchis-kde/
 ./install.sh
-```
-```
-yay -S discover dolphin-plugins okular darkly kwin-effects-better-blur-dx
-```
-```
 cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwinrule
 ```
