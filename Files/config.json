@@ -7,7 +7,7 @@
   "frontend": true,
   "metrics": false,
   "memory": true,
-  "memorySmBus": "i2c-18",
+  "memorySmBus": "i2c-11",
   "memoryType": 5,
   "exclude": [],
   "memorySku": "CMH32GX5M2B6400C36",
