@@ -72,6 +72,9 @@ sudo rm -r <FOLDER>
 ```
 ## Secure Boot
 ```
+sudo pacman -S sbctl systemd-ukify
+```
+```
 sudo sbctl create-keys
 sudo sbctl enroll-keys -m -f
 sudo sbctl verify
