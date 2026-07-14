@@ -104,10 +104,10 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
-sudo pacman -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools cider cmake deja-dup discord dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
+sudo pacman -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
 ```
 ```
-yay -S --needed --noconfirm google-chrome qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
+yay -S --needed --noconfirm darkly google-chrome kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
 ```
 ```
 flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober
@@ -149,22 +149,31 @@ wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-se
 ```
 echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 ```
-# DE-specific
-## KDE
+
+# KDE Customization
+## Klassy
 ```
-yay -S --needed --noconfirm discover dolphin-plugins okular darkly kwin-effects-better-blur-dx
 cd ~/Projects
 git clone https://github.com/paulmcauley/klassy
 cd klassy
 git checkout plasma6.3
 ./install.sh
+```
+## Wallpaper Engine
+```
 cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst
 sudo pacman -U ./WallpaperEngine_kde6-1.1e-1-x86_64.pkg.tar.zst --overwrite '*'
+```
+## Orchis Theme
+```
 cd ~/Projects
 git clone https://github.com/badams700/Orchis-kde
 cd Orchis-kde/
 ./install.sh
+```
+## Window Blur
+```
 cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwinrule
 ```
@@ -178,8 +187,3 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blu
 
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
-
-## GNOME
-```
-commands here
-```
