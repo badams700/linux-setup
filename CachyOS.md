@@ -110,7 +110,7 @@ sudo pacman -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdr
 yay -S --needed --noconfirm google-chrome qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
 ```
 ```
-flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen
+flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober
 ```
 
 ## OpenLinkHub
