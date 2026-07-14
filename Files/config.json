@@ -1,2 +1,35 @@
-sudo dmidecode -t memory | grep 'Part Number'
-CMH32GX5M2B6400C36
+{
+  "debug": false,
+  "listenPort": 27003,
+  "listenAddress": "127.0.0.1",
+  "cpuSensorChip": "",
+  "manual": false,
+  "frontend": true,
+  "metrics": false,
+  "memory": true,
+  "memorySmBus": "i2c-18",
+  "memoryType": 5,
+  "exclude": [],
+  "memorySku": "CMH32GX5M2B6400C36",
+  "resumeDelay": 15000,
+  "logFile": "",
+  "logLevel": "info",
+  "enhancementKits": "",
+  "temperatureOffset": 0,
+  "amdGpuIndex": 0,
+  "amdsmiPath": "",
+  "checkDevicePermission": false,
+  "graphProfiles": true,
+  "cpuTempFile": "",
+  "ramTempViaHwmon": true,
+  "nvidiaGpuIndex": [
+    0
+  ],
+  "defaultNvidiaGPU": 0,
+  "openRGBPort": 6743,
+  "enableOpenRGBTargetServer": false,
+  "enableGamepad": true,
+  "enableMotherboard": false,
+  "motherboardBiosOnExit": false,
+  "memoryRegisterOverride": ""
+}
