@@ -47,19 +47,14 @@ console-mode max
 ```
 ## Configure mkinitcpio for UKI
 /etc/mkinitcpio.d/linux-cachyos.preset
-
-/etc/mkinitcpio.d/linux-cachyos-rc.preset
 ```
 #default_image="/boot/initramfs-linux-cachyos.img"
 default_uki="/boot/EFI/Linux/cachyos.efi"
-
-#default_image="/boot/initramfs-linux-cachyos-rc.img"
-default_uki="/boot/EFI/Linux/cachyos-rc.efi"
 ```
 ## Edit Kernel Arguments
 /etc/kernel/cmdline
 ```
-acpi_enforce_resources=lax amdgpu.dcfeaturemask=0x402
+acpi_enforce_resources=lax
 ```
 ## Generate UKI
 ```
@@ -67,7 +62,7 @@ sudo mkinitcpio -P
 ```
 ## Remove Kernel Image Folder and files in /boot
 ```
-sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-lts.img /boot/initramfs-linux-cachyos-rc.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-lts.conf /boot/loadsr/entries/linux-cachyos-rc.conf
+sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-lts.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-lts.conf
 sudo su
 cd /boot
 ls
