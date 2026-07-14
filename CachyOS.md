@@ -168,6 +168,7 @@ cd Orchis-kde/
 ```
 ```
 yay -S discover dolphin-plugins okular darkly kwin-effects-better-blur-dx
+```
 ### KDE Discover
 - Kurve
 - Panel Colorizer
