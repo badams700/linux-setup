@@ -1,0 +1,12 @@
+[33ec8f2a-1fda-4501-b2c6-ff116a039fa5]
+Description=Blur
+opacityactive=92
+opacityactiverule=2
+opacityinactive=92
+opacityinactiverule=2
+wmclass=systemsettings|org.kde.ark|org.kde.dolphin|org.kde.plasma.emojier|org.kde.filelight|org.kde.gwenview|org.kde.kate|org.kde.kcalc|org.kdeconnect.app|org.kde.partitionmanager|org.kde.konsole|org.kde.kwrite|com.shellyorg.shelly|org.kde.plasma-systemmonitor|org.pulseaudio.pavucontrol|org.kde.dolphin|org.kde.okular
+wmclassmatch=3
+
+[General]
+count=1
+rules=33ec8f2a-1fda-4501-b2c6-ff116a039fa5
