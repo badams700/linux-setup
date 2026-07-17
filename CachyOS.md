@@ -1,9 +1,8 @@
-# Part 1
-## Time
+# Time
 ```
 timedatectl set-local-rtc 1
 ```
-## BTRFS Snapshots
+# BTRFS Snapshots
 ```
 sudo pacman -S --needed --noconfirm btrfs-assistant snapper snap-pac
 ```
@@ -107,15 +106,12 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
-sudo pacman -Syu --needed --noconfirm blender calibre cava cdrdao cdrtools chromium cider cmake code deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc darkly kwin-effects-better-blur-dx
+yay -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools chromium cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc darkly kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
 ```
 ```
-flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen us.zoom.Zoom org.vinegarhq.Sober app.twintaillauncher.ttl
+flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober
 ```
-## XIVLauncher
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Blooym/xlm/main/setup/install-native.sh)"
-```
+
 ## OpenLinkHub
 ```
 cd ~/Projects
@@ -124,12 +120,10 @@ cd OpenLinkHub/
 CGO_CFLAGS_ALLOW='-fno-strict-overflow' go build .
 sudo chmod +x install.sh
 sudo ./install.sh
-```
-```
+sleep 3
 sudo rm /opt/OpenLinkHub/config.json
 sudo wget -P /opt/OpenLinkHub https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.json
-```
-```
+sleep 3
 echo 'KERNEL=="i2c-11", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
@@ -154,14 +148,6 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 ```
 
 # KDE Customization
-## Darkly
-```
-hi
-```
-## KWin Blur
-```
-hi
-```
 ## Klassy
 ```
 cd ~/Projects
@@ -194,7 +180,6 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blu
 - Plasmusic Toolbar
 - KDE Control Station
 - Simple Separator
-- KZones
 - Papirus Icons
 
 ## KDE Layout
