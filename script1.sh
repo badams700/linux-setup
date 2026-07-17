@@ -34,9 +34,11 @@ sleep 5
 pacman -S --needed --noconfirm sbctl systemd-ukify
 sed -i '11c\#default_image="/boot/initramfs-linux-cachyos.img"' /etc/mkinitcpio.d/linux-cachyos.preset
 sed -i '12c\default_uki="/boot/EFI/Linux/cachyos.efi"' /etc/mkinitcpio.d/linux-cachyos.preset
-sed -i 's/$/ acpi_enforce_resources=lax/' /etc/kernel/cmdline
-sed -i '1c\default @saved' /boot/loader/loader.conf
-sed -i '2c\timeout 1' /boot/loader/loader.conf
+sed -i '11c\#default_image="/boot/initramfs-linux-cachyos-rc.img"' /etc/mkinitcpio.d/linux-cachyos-rc.preset
+sed -i '12c\default_uki="/boot/EFI/Linux/cachyos-rc.efi"' /etc/mkinitcpio.d/linux-cachyos-rc.preset
+sed -i 's/$/ acpi_enforce_resources=lax plymouth.use-simpledrm=1 amdgpu.dcfeaturemask=0x402 video=HDMI-1:3840x2160@160/' /etc/kernel/cmdline
+sed -i '1c\default 2' /boot/loader/loader.conf
+sed -i '2c\timeout 0' /boot/loader/loader.conf
 sed -i '3c\console-mode max' /boot/loader/loader.conf
 mkinitcpio -P
 
@@ -91,7 +93,6 @@ sbctl create-keys
 sbctl enroll-keys -m -f
 sbctl verify
 read -p "Please ensure all files to be signed are present. Press [Enter] to continue."
-sleep 60
 sbctl-batch-sign
 read -p "Secure Boot setup complete. Press [Enter] to reboot to UEFI and enable Secure Boot."
 systemctl reboot --firmware-setup
