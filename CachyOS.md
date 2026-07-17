@@ -50,10 +50,19 @@ console-mode max
 #default_image="/boot/initramfs-linux-cachyos.img"
 default_uki="/boot/EFI/Linux/cachyos.efi"
 ```
+/etc/mkinitcpio.d/linux-cachyos-rc.preset
+```
+#default_image="/boot/initramfs-linux-cachyos-rc.img"
+default_uki="/boot/EFI/Linux/cachyos-rc.efi"
+```
 ## Edit Kernel Arguments
 /etc/kernel/cmdline
 ```
-acpi_enforce_resources=lax
+acpi_enforce_resources=lax plymouth.use-simpledrm=1 amdgpu.dcfeaturemask=0x402 video=HDMI-1:3840x2160@160
+```
+## Install sbctl and ukify
+```
+sudo pacman -S --needed --noconfirm sbctl systemd-ukify
 ```
 ## Generate UKI
 ```
@@ -61,18 +70,16 @@ sudo mkinitcpio -P
 ```
 ## Remove Kernel Image Folder and files in /boot
 ```
-sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-lts.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-lts.conf
+sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-rc.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-rc.conf /boot/loader/entries/linux-cachyos-lts.conf
+```
 sudo su
 cd /boot
 ls
+exit
 ```
-```
-sudo rm -r <FOLDER>
+sudo rm -r /boot/<FOLDER>
 ```
 ## Secure Boot
-```
-sudo pacman -S sbctl systemd-ukify
-```
 ```
 sudo sbctl create-keys
 sudo sbctl enroll-keys -m -f
@@ -86,8 +93,6 @@ Reboot to UEFI and turn Secure Boot ON
 ```
 systemctl reboot --firmware-setup
 ```
-
-# Part 2
 ## Install Yay
 ```
 cd ~/Projects
