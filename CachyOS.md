@@ -24,7 +24,7 @@ sudo usermod -aG libvirt $USER
 systemctl enable --now libvirtd.service
 systemctl enable --now libvirtd.socket
 sudo virsh net-autostart default
-sudoufw route allow from 192.168.122.0/24
+sudo ufw route allow from 192.168.122.0/24
 ```
 ## Identify Windows EFI Path
 ```
@@ -107,10 +107,10 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
-yay -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools chromium cider cmake code deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc darkly kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin zoom
+sudo pacman -Syu --needed --noconfirm blender calibre cava cdrdao cdrtools chromium cider cmake code deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc darkly kwin-effects-better-blur-dx
 ```
 ```
-flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober
+flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen us.zoom.Zoom org.vinegarhq.Sober app.twintaillauncher.ttl
 ```
 ## XIVLauncher
 ```
@@ -154,6 +154,14 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 ```
 
 # KDE Customization
+## Darkly
+```
+hi
+```
+## KWin Blur
+```
+hi
+```
 ## Klassy
 ```
 cd ~/Projects
@@ -186,6 +194,7 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blu
 - Plasmusic Toolbar
 - KDE Control Station
 - Simple Separator
+- KZones
 - Papirus Icons
 
 ## KDE Layout
