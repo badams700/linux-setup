@@ -49,16 +49,19 @@ sudo pacman -S --needed --noconfirm sbctl systemd-ukify
 ```
 sudo mkinitcpio -P
 ```
-## Remove Kernel Image Folder and files in /boot
+## Remove old initramfs
 ```
-sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-rc.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-rc.conf /boot/loader/entries/linux-cachyos-lts.conf
+sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-rc.img
+```
+## Add UKIs to UEFI
+```
+lsblk
 ```
 ```
-sudo su
-cd /boot
-ls
-rm <folder>
-exit
+sudo efibootmgr -c -d <disk> -p 1 -L "Arch Linux (cachyos)" -l "\EFI\Linux\cachyos.efi"
+```
+```
+sudo efibootmgr -c -d <disk> -p 1 -L "Arch Linux (cachyos-rc)" -l "\EFI\Linux\cachyos-rc.efi"
 ```
 ## Secure Boot
 ```
