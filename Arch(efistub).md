@@ -19,7 +19,9 @@ nmcli connection modify <connection> ipv4.dns "1.1.1.1 1.0.0.1"
 ```
 ## CachyOS Repos
 ```
-placeholder
+curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+sudo ./cachyos-repo.sh
 ```
 ## Install CachyOS Kernel
 ```
@@ -69,9 +71,14 @@ sudo sbctl create-keys
 sudo sbctl enroll-keys -m -f
 sudo sbctl verify
 ```
-Ensure all correct files are present
+Sign files
 ```
-sudo sbctl-batch-sign
+sudo sbctl sign /boot/EFI/Linux/arch-linux.efi
+sudo sbctl sign /boot/EFI/Linux/cachyos.efi
+sudo sbctl sign /boot/EFI/Linux/cachyos-rc.efi
+sudo sbctl sign /boot/vmlinuz-linux
+sudo sbctl sign /boot/vmlinuz-linux-cachyos
+sudo sbctl sign /boot/vmlinuz-linux-cachyos-rc
 ```
 Reboot to UEFI and turn Secure Boot ON
 ```
