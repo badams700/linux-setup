@@ -93,13 +93,6 @@ Reboot to UEFI and turn Secure Boot ON
 ```
 systemctl reboot --firmware-setup
 ```
-## Install Yay
-```
-cd ~/Projects
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
 ## Cider Repo
 ```
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
@@ -111,10 +104,10 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
-yay -Syu --needed --noconfirm amdgpu_top blender calibre cava cdrdao cdrtools chromium cider cmake deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc darkly kwin-effects-better-blur-dx qdiskinfo twintaillauncher-bin visual-studio-code-bin xivlauncher zoom
+sudo pacman -Syu --needed --noconfirm blender calibre cava cdrdao cdrtools chromium cider cmake code deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
 ```
 ```
-flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober
+flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober us.zoom.Zoom app.twintaillauncher.ttl
 ```
 
 ## OpenLinkHub
@@ -151,8 +144,15 @@ wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-se
 ```
 echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 ```
-
+## Steam - XIVLauncher
+```
+hi
+```
 # KDE Customization
+## Darkly
+```
+hi
+```
 ## Klassy
 ```
 cd ~/Projects
@@ -173,6 +173,10 @@ cd ~/Projects
 git clone https://github.com/badams700/Orchis-kde
 cd Orchis-kde/
 ./install.sh
+```
+## Kwin Better Blur
+```
+hi
 ```
 ## Window Blur
 ```
