@@ -161,6 +161,9 @@ cd Darkly
 ```
 ## Klassy
 ```
+sudo pacman -S --needed git frameworkintegration gcc-libs glibc kcmutils kcolorscheme kconfig kcoreaddons kdecoration kguiaddons ki18n kiconthemes kirigami kwidgetsaddons kwindowsystem qt6-base qt6-declarative qt6-svg xdg-utils extra-cmake-modules kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
+```
+```
 cd ~/Projects
 git clone https://github.com/paulmcauley/klassy
 cd klassy
