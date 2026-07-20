@@ -151,7 +151,13 @@ hi
 # KDE Customization
 ## Darkly
 ```
-hi
+sudo pacman -S --needed cmake extra-cmake-modules kdecoration qt6-declarative kcoreaddons kcmutils kcolorscheme kconfig kguiaddons kiconthemes kwindowsystem git qt5-declarative qt5-x11extras gcc make kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
+```
+```
+cd ~/Projects
+git clone --single-branch --depth=1 https://github.com/Bali10050/Darkly.git
+cd Darkly
+./install.sh
 ```
 ## Klassy
 ```
