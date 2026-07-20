@@ -10,25 +10,6 @@ sudo pacman -S --needed --noconfirm btrfs-assistant snapper snap-pac
 - Snapper Settings
 - Number: 10
 - Create a snapshot of the base install
-## Hardware Acceleration Scripts
-```
-sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
-sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/main/Files/steam_dev.cfg
-```
-## QEMU VM
-```
-sudo pacman -S --needed --noconfirm qemu-full virt-manager swtpm
-echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
-sudo usermod -aG libvirt $USER
-systemctl enable --now libvirtd.service
-systemctl enable --now libvirtd.socket
-sudo virsh net-autostart default
-sudo ufw route allow from 192.168.122.0/24
-```
-## Identify Windows EFI Path
-```
-lsblk
-```
 ## Configure mkinitcpio for UKI
 /etc/mkinitcpio.d/linux-cachyos.preset
 ```
@@ -94,7 +75,16 @@ sudo pacman -Syu --needed --noconfirm blender calibre cava cdrdao cdrtools chrom
 ```
 flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober us.zoom.Zoom app.twintaillauncher.ttl
 ```
-
+## QEMU VM
+```
+sudo pacman -S --needed --noconfirm qemu-full virt-manager swtpm
+echo 'firewall_backend = "iptables"' | sudo tee -a /etc/libvirt/network.conf
+sudo usermod -aG libvirt $USER
+systemctl enable --now libvirtd.service
+systemctl enable --now libvirtd.socket
+sudo virsh net-autostart default
+sudo ufw route allow from 192.168.122.0/24
+```
 ## OpenLinkHub
 ```
 cd ~/Projects
@@ -128,6 +118,12 @@ wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-se
 ## TTY Font
 ```
 echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
+```
+
+## Hardware Acceleration Scripts
+```
+sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
+sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/main/Files/steam_dev.cfg
 ```
 ## Steam - XIVLauncher
 ```
