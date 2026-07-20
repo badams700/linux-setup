@@ -10,6 +10,21 @@ sudo pacman -S --needed --noconfirm btrfs-assistant snapper snap-pac
 - Snapper Settings
 - Number: 10
 - Create a snapshot of the base install
+## DNS
+```
+nmcli connection show
+```
+```
+nmcli connection modify <connection> ipv4.dns "1.1.1.1 1.0.0.1"
+```
+## CachyOS Repos
+```
+placeholder
+```
+## Install CachyOS Kernel
+```
+sudo pacman -S linux-cachyos linux-cachyos-headers linux-cachyos-rc linux-cachyos-rc-headers
+```
 ## Configure mkinitcpio for UKI
 /etc/mkinitcpio.d/linux-cachyos.preset
 ```
