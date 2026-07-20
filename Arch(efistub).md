@@ -29,21 +29,6 @@ sudo ufw route allow from 192.168.122.0/24
 ```
 lsblk
 ```
-## Copy Windows Bootloader
-```
-sudo mkdir /mnt/WinBoot
-sudo mount /dev/<DRIVE> /mnt/WinBoot
-sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
-sudo umount /mnt/WinBoot
-sudo rm -r /mnt/WinBoot
-```
-## systemd-boot Config
-/boot/loader/loader.conf
-```
-default @saved
-timeout 1
-console-mode max
-```
 ## Configure mkinitcpio for UKI
 /etc/mkinitcpio.d/linux-cachyos.preset
 ```
