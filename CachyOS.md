@@ -58,7 +58,7 @@ default_uki="/boot/EFI/Linux/cachyos-rc.efi"
 ## Edit Kernel Arguments
 /etc/kernel/cmdline
 ```
-acpi_enforce_resources=lax plymouth.use-simpledrm=1 amdgpu.dcfeaturemask=0x402 video=HDMI-1:3840x2160@160
+acpi_enforce_resources=lax
 ```
 ## Install sbctl and ukify
 ```
@@ -72,12 +72,12 @@ sudo mkinitcpio -P
 ```
 sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-rc.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-rc.conf /boot/loader/entries/linux-cachyos-lts.conf
 ```
+```
 sudo su
 cd /boot
 ls
+rm <folder>
 exit
-```
-sudo rm -r /boot/<FOLDER>
 ```
 ## Secure Boot
 ```
