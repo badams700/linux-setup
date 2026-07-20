@@ -146,7 +146,7 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 ```
 ## Steam - XIVLauncher
 ```
-hi
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Blooym/xlm/main/setup/install-native.sh)"
 ```
 # KDE Customization
 ## Darkly
@@ -185,7 +185,14 @@ cd Orchis-kde/
 ```
 ## Kwin Better Blur
 ```
-hi
+sudo pacman -S --needed base-devel git extra-cmake-modules qt6-tools kwin
+```
+```
+cd ~/Projects
+git clone https://github.com/xarblu/kwin-effects-better-blur-dx
+cd kwin-effects-better-blur-dx
+chmod +x build.sh
+./build.sh
 ```
 ## Window Blur
 ```
