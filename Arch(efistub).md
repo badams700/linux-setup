@@ -97,8 +97,13 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 ```
 sudo pacman -Syu --needed --noconfirm blender calibre cava cdrdao cdrtools chromium cider cmake code deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
 ```
+### Flatpak
 ```
 flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober us.zoom.Zoom app.twintaillauncher.ttl
+```
+### Gaming Packages
+```
+sudo pacman -S --needed cachyos-gaming-meta && sudo pacman -S --needed cachyos-gaming-applications
 ```
 ## QEMU VM
 ```
