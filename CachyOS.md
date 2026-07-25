@@ -104,7 +104,7 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
-sudo pacman -Syu --needed --noconfirm blender calibre cava cdrdao cdrtools chromium cider cmake code deja-dup discord discover dolphin-plugins dvd+rw-tools dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk k3b npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd vlc
+yay -Syu --needed --noconfirm blender calibre cava chromium cider cmake darkly deja-dup discord discover dolphin-plugins dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk kwin-effects-better-blur-dx npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app qdiskinfo rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher
 ```
 ```
 flatpak install -y flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever org.jellyfin.JellyfinDesktop com.makemkv.MakeMKV io.github.alainm23.planify com.yubico.yubioath app.zen_browser.zen org.vinegarhq.Sober us.zoom.Zoom app.twintaillauncher.ttl
@@ -122,7 +122,7 @@ sleep 3
 sudo rm /opt/OpenLinkHub/config.json
 sudo wget -P /opt/OpenLinkHub https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.json
 sleep 3
-echo 'KERNEL=="i2c-11", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
+echo 'KERNEL=="i2c-13", MODE="0600", OWNER="openlinkhub"' | sudo tee /etc/udev/rules.d/98-corsair-memory.rules
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 sudo systemctl restart OpenLinkHub.service
@@ -144,25 +144,7 @@ wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-se
 ```
 echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 ```
-## Steam - XIVLauncher
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Blooym/xlm/main/setup/install-native.sh)"
-```
-# KDE Customization
-## Darkly
-```
-sudo pacman -S --needed cmake extra-cmake-modules kdecoration qt6-declarative kcoreaddons kcmutils kcolorscheme kconfig kguiaddons kiconthemes kwindowsystem git qt5-declarative qt5-x11extras gcc make kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
-```
-```
-cd ~/Projects
-git clone --single-branch --depth=1 https://github.com/Bali10050/Darkly.git
-cd Darkly
-./install.sh
-```
 ## Klassy
-```
-sudo pacman -S --needed git frameworkintegration gcc-libs glibc kcmutils kcolorscheme kconfig kcoreaddons kdecoration kguiaddons ki18n kiconthemes kirigami kwidgetsaddons kwindowsystem qt6-base qt6-declarative qt6-svg xdg-utils extra-cmake-modules kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kirigami2 kwindowsystem5
-```
 ```
 cd ~/Projects
 git clone https://github.com/paulmcauley/klassy
@@ -182,17 +164,6 @@ cd ~/Projects
 git clone https://github.com/badams700/Orchis-kde
 cd Orchis-kde/
 ./install.sh
-```
-## Kwin Better Blur
-```
-sudo pacman -S --needed base-devel git extra-cmake-modules qt6-tools kwin
-```
-```
-cd ~/Projects
-git clone https://github.com/xarblu/kwin-effects-better-blur-dx
-cd kwin-effects-better-blur-dx
-chmod +x build.sh
-./build.sh
 ```
 ## Window Blur
 ```
