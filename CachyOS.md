@@ -137,7 +137,14 @@ sudo systemctl restart OpenLinkHub.service
 ## Samba Share
 ```
 sudo mkdir /mnt/Share /mnt/oppa
-echo '//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,username=badams,password=*password*,rw 0 0' | sudo tee -a /etc/fstab
+sudo nano /root/.smbcredentials
+```
+enter username= and password=
+```
+sudo chmod 600 /root/.smbcredentials
+```
+```
+echo '//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,credentials=/root/.smbcredentials,rw 0 0' | sudo tee -a /etc/fstab
 ```
 
 ## Fastfetch
