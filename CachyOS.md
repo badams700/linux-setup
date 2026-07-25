@@ -104,6 +104,12 @@ echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
 
 ## Install Software
 ```
+cd ~/Projects
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si
+```
+```
 yay -Syu --needed --noconfirm blender calibre cava chromium cider cmake darkly deja-dup discord discover dolphin-plugins dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk kwin-effects-better-blur-dx npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app qdiskinfo rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher
 ```
 ```
