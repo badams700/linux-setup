@@ -145,6 +145,7 @@ sudo chmod 600 /root/.smbcredentials
 ```
 ```
 echo '//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,credentials=/root/.smbcredentials,rw 0 0' | sudo tee -a /etc/fstab
+echo 'UUID=5ED1-5E2A,/mnt/oppa/,exfat,nofail,0 0' | sudo tee -a /etc/fstab
 ```
 
 ## Fastfetch
