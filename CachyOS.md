@@ -93,6 +93,13 @@ Reboot to UEFI and turn Secure Boot ON
 ```
 systemctl reboot --firmware-setup
 ```
+## Yay
+```
+cd ~/Projects
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si
+```
 ## Cider Repo
 ```
 curl -s https://repo.cider.sh/ARCH-GPG-KEY | sudo pacman-key --add -
@@ -100,15 +107,23 @@ sudo pacman-key --lsign-key A0CD6B993438E22634450CDD2A236C3F42A61682
 echo '[cidercollective]' | sudo tee -a /etc/pacman.conf
 echo 'SigLevel = Required TrustedOnly' | sudo tee -a /etc/pacman.conf
 echo 'Server = https://repo.cider.sh/arch' | sudo tee -a /etc/pacman.conf
+sudo pacman -Syu
 ```
+## Klassy Repo
+```
+echo '[home_paulmcauley_Arch]' | sudo tee -a /etc/pacman.conf
+echo 'Server = https://download.opensuse.org/repositories/home:/paulmcauley/Arch/$arch' | sudo tee -a /etc/pacman.conf
+sudo su
+key=$(curl -fsSL https://download.opensuse.org/repositories/home:paulmcauley/Arch/$(uname -m)/home_paulmcauley_Arch.key)
+fingerprint=$(gpg --quiet --with-colons --import-options show-only --import --fingerprint <<< "${key}" | awk -F: '$1 == "fpr" { print $10 }')
 
+pacman-key --init
+pacman-key --add - <<< "${key}"
+pacman-key --lsign-key "${fingerprint}"
+
+pacman -Sy home_paulmcauley_Arch/klassy
+```
 ## Install Software
-```
-cd ~/Projects
-git clone https://aur.archlinux.org/yay.git
-cd yay/
-makepkg -si
-```
 ```
 yay -Syu --needed --noconfirm blender calibre cava chromium cider cmake darkly deja-dup discord discover dolphin-plugins dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake i2c-tools jre-openjdk kwin-effects-better-blur-dx npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular onlyoffice-bin openssh prismlauncher protonplus proton-pass proton-vpn-gtk-app qdiskinfo rpi-imager terminus-font thunderbird transmission-gtk ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher zoom
 ```
@@ -137,15 +152,7 @@ sudo systemctl restart OpenLinkHub.service
 ## Samba Share
 ```
 sudo mkdir /mnt/Share /mnt/oppa
-sudo nano /root/.smbcredentials
-```
-enter username= and password=
-```
-sudo chmod 600 /root/.smbcredentials
-```
-```
-echo '//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,credentials=/root/.smbcredentials,rw 0 0' | sudo tee -a /etc/fstab
-echo 'UUID=5ED1-5E2A,/mnt/oppa/,exfat,nofail,0 0' | sudo tee -a /etc/fstab
+echo '//192.168.1.123/Share /mnt/Share cifs _netdev,nofail,uid=brad,username=badams,password=*password*,rw 0 0' | sudo tee -a /etc/fstab
 ```
 
 ## Fastfetch
@@ -157,14 +164,6 @@ wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-se
 ## TTY Font
 ```
 echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
-```
-## Klassy
-```
-cd ~/Projects
-git clone https://github.com/paulmcauley/klassy
-cd klassy
-git checkout plasma6.3
-./install.sh
 ```
 ## Wallpaper Engine
 ```
