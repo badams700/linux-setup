@@ -2,14 +2,44 @@
 ```
 timedatectl set-local-rtc 1
 ```
-# BTRFS Snapshots
+# Bootloader Configuration
 ```
-sudo pacman -S --needed --noconfirm btrfs-assistant snapper snap-pac
+sudo nano /boot/limine.conf
 ```
-- BTRFS Assistant
-- Snapper Settings
-- Number: 10
-- Create a snapshot of the base install
+### edit:
+```
+term_background: 00000000 #ffffffff
+#wallpaper: boot():/limine-splash.png
+```
+## Secure Boot
+Install sbctl
+```
+sudo pacman -S sbctl
+```
+### Create and enroll keys
+```
+sudo sbctl create-keys
+sudo sbctl enroll-keys --microsoft
+```
+### Edit limine config
+```
+sudo nano /etc/default/limine
+ENABLE_ENROLL_LIMINE_CONFIG=yes
+```
+### Sign limine
+```
+sudo limine-enroll-config
+sudo limine-update
+```
+### Reboot to UEFI and enable Secure Boot
+```
+systemctl reboot --firmware-setup
+```
+### Check Secure Boot status
+```
+sudo bootctl status
+```
+# Applications
 ## Hardware Acceleration Scripts
 ```
 sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
@@ -24,81 +54,6 @@ systemctl enable --now libvirtd.service
 systemctl enable --now libvirtd.socket
 sudo virsh net-autostart default
 sudo ufw route allow from 192.168.122.0/24
-```
-## Identify Windows EFI Path
-```
-lsblk
-```
-## Copy Windows Bootloader
-```
-sudo mkdir /mnt/WinBoot
-sudo mount /dev/<DRIVE> /mnt/WinBoot
-sudo cp -r /mnt/WinBoot/EFI/Microsoft /boot/EFI
-sudo umount /mnt/WinBoot
-sudo rm -r /mnt/WinBoot
-```
-## systemd-boot Config
-/boot/loader/loader.conf
-```
-default @saved
-timeout 1
-console-mode max
-```
-## Configure mkinitcpio for UKI
-/etc/mkinitcpio.d/linux-cachyos.preset
-```
-#default_image="/boot/initramfs-linux-cachyos.img"
-default_uki="/boot/EFI/Linux/cachyos.efi"
-```
-/etc/mkinitcpio.d/linux-cachyos-rc.preset
-```
-#default_image="/boot/initramfs-linux-cachyos-rc.img"
-default_uki="/boot/EFI/Linux/cachyos-rc.efi"
-```
-## Edit Kernel Arguments
-/etc/kernel/cmdline
-```
-acpi_enforce_resources=lax
-```
-## Install sbctl and ukify
-```
-sudo pacman -S --needed --noconfirm sbctl systemd-ukify
-```
-## Generate UKI
-```
-sudo mkinitcpio -P
-```
-## Remove Kernel Image Folder and files in /boot
-```
-sudo rm /boot/initramfs-linux-cachyos.img /boot/initramfs-linux-cachyos-rc.img /boot/loader/entries/linux-cachyos.conf /boot/loader/entries/linux-cachyos-rc.conf /boot/loader/entries/linux-cachyos-lts.conf
-```
-```
-sudo su
-cd /boot
-ls
-rm <folder>
-exit
-```
-## Secure Boot
-```
-sudo sbctl create-keys
-sudo sbctl enroll-keys -m -f
-sudo sbctl verify
-```
-Ensure all correct files are present
-```
-sudo sbctl-batch-sign
-```
-Reboot to UEFI and turn Secure Boot ON
-```
-systemctl reboot --firmware-setup
-```
-## Yay
-```
-cd ~/Projects
-git clone https://aur.archlinux.org/yay.git
-cd yay/
-makepkg -si
 ```
 ## Cider Repo
 ```
