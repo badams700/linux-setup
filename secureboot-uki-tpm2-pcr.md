@@ -1,6 +1,6 @@
 ## Install utilities 
 ```
-sudo pacman -S sbctl systemd-ukify sbsigntool
+sudo pacman -S sbctl systemd-ukify sbsigntools
 ```
 ## Edit mkinitcpio preset configuration
 ```
@@ -13,6 +13,11 @@ default_uki="/boot/EFI/Linux/cachyos.efi"
 ```
 sudo sbctl create-keys
 ```
+## Generate PCR keys
+```
+sudo openssl genrsa -out /etc/systemd/tpm2-pcr-private-key.pem 2048
+sudo openssl rsa -in /etc/systemd/tpm2-pcr-private-key.pem -pubout -out /etc/systemd/tpm2-pcr-public-key.pem
+```
 ## Edit UKI configuration
 ```
 sudo nano /etc/kernel/uki.conf
@@ -22,6 +27,10 @@ sudo nano /etc/kernel/uki.conf
 SecureBootSigningTool=sbsign
 SecureBootPrivateKey=/var/lib/sbctl/keys/db/db.key
 SecureBootCertificate=/var/lib/sbctl/keys/db/db.pem
+
+[PCRSignature:all]
+PCRPrivateKey=/etc/systemd/tpm2-pcr-private-key.pem
+PCRPublicKey=/etc/systemd/tpm2-pcr-public-key.pem
 ```
 ## Disable sbctl hooks
 ```
@@ -33,20 +42,6 @@ sudo ln -sf /dev/null /etc/initcpio/post/sbctl
 ## Enroll sbctl keys to UEFI
 ```
 sudo sbctl enroll-keys -m
-```
-## Edit UKI configuration
-```
-sudo nano /etc/kernel/uki.conf
-```
-```
-[PCRSignature:all]
-PCRPrivateKey=/etc/systemd/tpm2-pcr-private-key.pem
-PCRPublicKey=/etc/systemd/tpm2-pcr-public-key.pem
-```
-## Generate PCR keys
-```
-sudo openssl genrsa -out /etc/systemd/tpm2-pcr-private-key.pem 2048
-sudo openssl rsa -in /etc/systemd/tpm2-pcr-private-key.pem -pubout -out /etc/systemd/tpm2-pcr-public-key.pem
 ```
 ## Regenerate signed UKI
 ```
