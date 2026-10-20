@@ -54,7 +54,7 @@ sudo mkinitcpio -P
 ```
 ## Enroll TPM to LUKS
 ```
-sudo systemd-cryptenroll /dev/nvmeXnXpX \
+sudo systemd-cryptenroll /dev/nvme_n_p_ \
   --tpm2-device=auto \
   --tpm2-pcrs=0+2+7+12 \
   --tpm2-public-key=/etc/systemd/tpm2-pcr-public-key.pem
@@ -63,8 +63,8 @@ sudo systemd-cryptenroll /dev/nvmeXnXpX \
 ```
 sudo efibootmgr \
   --create \
-  --disk /dev/nvmeX \
-  --part X \
+  --disk /dev/nvme_n_ \
+  --part _ \
   --label "CachyOS" \
   --loader /EFI/Linux/cachyos.efi \
   --unicode
