@@ -4,42 +4,7 @@ timedatectl set-local-rtc 1
 ```
 
 # Bootloader Configuration
-```
-sudo nano /boot/limine.conf
-```
-### edit:
-```
-term_background: 00000000 #ffffffff
-#wallpaper: boot():/limine-splash.png
-```
-## Secure Boot
-### Install sbctl
-```
-sudo pacman -S sbctl
-```
-### Create and enroll keys
-```
-sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft
-```
-### Edit limine config
-```
-sudo nano /etc/default/limine
-ENABLE_ENROLL_LIMINE_CONFIG=yes
-```
-### Sign limine
-```
-sudo limine-enroll-config
-sudo limine-update
-```
-### Reboot to UEFI and enable Secure Boot
-```
-systemctl reboot --firmware-setup
-```
-### Check Secure Boot status
-```
-sudo bootctl status
-```
+See - [secureboot-tpm2-uki-pcr.md](https://github.com/badams700/linux-setup/blob/main/secureboot-uki-tpm2-pcr.md)
 
 # Applications
 ## Cider Repo
