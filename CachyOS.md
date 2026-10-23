@@ -78,6 +78,7 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blu
 ```
 mkdir ~/.config/fastfetch
 wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.jsonc
+wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/Files/logo.png
 ```
 ## TTY Font
 ```
