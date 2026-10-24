@@ -213,6 +213,8 @@ tar xf capitaine-cursors-r4.tar.gz
 sudo cp -r capitaine-cursors ~/.local/share/icons
 ```
 Set cursor in GNOME Tweaks.
+## GNOME Layout
+![GNOME Layout](gnome-layout.png)
 </details>
 
 
