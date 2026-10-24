@@ -116,7 +116,7 @@ makepkg -si
 ```
 ## Install packages - GNOME or KDE
 ```
-yay -S --needed 1password alacarte bazaar blender btrfs-assistant calibre cava cmake  ddcutil-service discord dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qbittorrent rpi-imager snapper snap-pac terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher zoom && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen com.rafaelmardojai.Blanket
+yay -S --needed 1password alacarte bazaar blender calibre cava cmake  ddcutil-service discord dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qbittorrent rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher zoom && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen com.rafaelmardojai.Blanket
 ```
 ## Hardware Acceleration Scripts
 ```
