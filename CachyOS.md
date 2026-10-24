@@ -33,13 +33,29 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
-## Install packages
+## Install packages - GNOME or KDE
 ```
-yay -S --needed 1password bazaar blender bup calibre cava cider cmake darkly discord dolphin-plugins dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk kup kwin-effects-better-blur-dx npm ntfs-3g ntfsprogs obs-studio-browser obsidian okular openoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qbittorrent rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc vulkan-devel vulkan-tools xivlauncher zoom
+yay -S --needed 1password alacarte bazaar blender btrfs-assistant calibre cava cmake  ddcutil-service discord dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qbittorrent rpi-imager snapper snap-pac terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher zoom && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen com.rafaelmardojai.Blanket
 ```
-## Flatpak
+## Hardware Acceleration Scripts
 ```
-flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen
+sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
+sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/main/Files/steam_dev.cfg
+```
+## Fastfetch
+```
+mkdir ~/.config/fastfetch
+wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.jsonc
+```
+## TTY Font
+```
+echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
+```
+<details>
+<summary>KDE Customizations</summary>
+
+```
+yay -S --needed bup darkly dolphin-plugins kup kwin-effects-better-blur-dx okular
 ```
 ## Wallpaper Engine
 ```
@@ -50,7 +66,6 @@ cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/WallpaperEngine_kde6-1_1k-1-x86_64.pkg.tar.zst
 sudo pacman -U ./WallpaperEngine_kde6-1_1k-1-x86_64.pkg.tar.zst --overwrite '*'
 ```
-# Customization
 ## Klassy
 ```
 sudo pacman -S --needed git frameworkintegration gcc-libs glibc kcmutils kcolorscheme kconfig kcoreaddons kdecoration kguiaddons ki18n kiconthemes kwidgetsaddons kwindowsystem qt6-base qt6-declarative qt6-svg xdg-utils extra-cmake-modules kcmutils5 frameworkintegration5 kconfigwidgets5 kiconthemes5 kwindowsystem5
@@ -74,16 +89,6 @@ cd Orchis-kde/
 cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwinrule
 ```
-## Fastfetch
-```
-mkdir ~/.config/fastfetch
-wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.jsonc
-wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/Files/logo.png
-```
-## TTY Font
-```
-echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
-```
 ## Install from KDE Widgets / Icons
 - Kurve
 - Panel Colorizer
@@ -93,10 +98,25 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 - Papirus Icons
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
+</details>
 
-# Other
-## Hardware Acceleration Scripts
+<details>
+<summary>GNOME Customizations</summary>
+  
+## GNOME Extensions
+- App Hider
+- Better Tray Icons
+- Blur My Shell
+- Caffeine
+- Dash to Dock
+- GSConnect
+- Hide System Icons
+- Just Perfectionn
+- Multi Display Adjustment
+## Flatpak
 ```
-sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
-sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/main/Files/steam_dev.cfg
+flatpak install flathub com.mattjakeman.ExtensionManager io.github.realmazharhussain.GdmSettings io.gitlab.adhami3310.Impression org.gnome.World.PikaBackup
 ```
+</details>
+
+
