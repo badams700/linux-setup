@@ -2,9 +2,85 @@
 ```
 timedatectl set-local-rtc 1
 ```
-
 # Bootloader Configuration
-See - [secureboot-tpm2-uki-pcr.md](https://github.com/badams700/linux-setup/blob/main/secureboot-uki-tpm2-pcr.md)
+<details>
+<summary>Measured UKI - Direct Boot</summary>
+
+## Install utilities 
+```
+sudo pacman -S sbctl systemd-ukify sbsigntools
+```
+## Edit mkinitcpio preset configuration
+```
+sudo nano /etc/mkinitcpio.d/linux-cachyos.preset
+```
+```
+default_uki="/boot/EFI/Linux/cachyos.efi"
+```
+## Generate sbctl keys
+```
+sudo sbctl create-keys
+```
+## Generate PCR keys
+```
+sudo openssl genrsa -out /etc/systemd/tpm2-pcr-private-key.pem 2048
+sudo openssl rsa -in /etc/systemd/tpm2-pcr-private-key.pem -pubout -out /etc/systemd/tpm2-pcr-public-key.pem
+```
+## Edit UKI configuration
+```
+sudo nano /etc/kernel/uki.conf
+```
+```
+[UKI]
+SecureBootSigningTool=sbsign
+SecureBootPrivateKey=/var/lib/sbctl/keys/db/db.key
+SecureBootCertificate=/var/lib/sbctl/keys/db/db.pem
+
+[PCRSignature:all]
+PCRPrivateKey=/etc/systemd/tpm2-pcr-private-key.pem
+PCRPublicKey=/etc/systemd/tpm2-pcr-public-key.pem
+```
+## Disable sbctl hooks
+```
+sudo ln -sf /dev/null /etc/kernel/install.d/91-sbctl.install
+sudo ln -sf /dev/null /usr/lib/kernel/install.d/91-sbctl.install
+sudo ln -sf /dev/null /etc/pacman.d/hooks/zz-sbctl.hook
+sudo ln -sf /dev/null /etc/initcpio/post/sbctl
+```
+## Enroll sbctl keys to UEFI
+```
+sudo sbctl enroll-keys -m
+```
+## Regenerate signed UKI
+```
+sudo mkinitcpio -P
+```
+## Enroll TPM to LUKS
+```
+sudo systemd-cryptenroll /dev/nvme_n_p_ \
+  --tpm2-device=auto \
+  --tpm2-pcrs=0+2+7+12 \
+  --tpm2-public-key=/etc/systemd/tpm2-pcr-public-key.pem
+```
+## Add UKI to UEFI boot menu
+```
+sudo efibootmgr \
+  --create \
+  --disk /dev/nvme_n_ \
+  --part _ \
+  --label "CachyOS" \
+  --loader /EFI/Linux/cachyos.efi \
+  --unicode
+```
+## Reboot to firmware and enable Secure Boot - ensure UKI shows up in boot menu
+```
+systemctl reboot --firmware-setup
+```
+## Remove systemd-boot if successful
+```
+sudo bootctl remove
+```
+</details>
 
 # Applications
 ## Cider Repo
@@ -54,6 +130,7 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 <details>
 <summary>KDE Customizations</summary>
 
+## KDE Applications
 ```
 yay -S --needed bup darkly dolphin-plugins kup kwin-effects-better-blur-dx okular
 ```
@@ -116,6 +193,25 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blu
 ## Flatpak
 ```
 flatpak install flathub com.mattjakeman.ExtensionManager io.github.realmazharhussain.GdmSettings io.gitlab.adhami3310.Impression org.gnome.World.PikaBackup
+```
+## Papirus Icons
+```
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+```
+```
+wget -qO- https://git.io/papirus-folders-install | sh
+```
+```
+papirus-folders -C palebrown --theme Papirus-Dark
+```
+Adjust Icons in GNOME Tweaks.
+## Cursor
+Capitaine Cursor: https://www.gnome-look.org/p/1148692
+```
+tar xf /home/brad/Downloads/capitaine-cursors-r4.tar.gz
+```
+```
+sudo cp /home/brad/Downloads/capitaine-cursors-r4 ~/.local/share/icons
 ```
 </details>
 
