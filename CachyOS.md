@@ -2,6 +2,11 @@
 ```
 timedatectl set-local-rtc 1
 ```
+# Snapshots
+```
+sudo pacman -S snapper snap-pac btrfs-assistant
+```
+Configure and take a base snapshot.
 # Bootloader Configuration
 <details>
 <summary>Measured UKI - Direct Boot</summary>
