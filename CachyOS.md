@@ -208,11 +208,11 @@ Adjust Icons in GNOME Tweaks.
 ## Cursor
 Capitaine Cursor: https://www.gnome-look.org/p/1148692
 ```
-tar xf /home/brad/Downloads/capitaine-cursors-r4.tar.gz
+cd ~/Projects
+tar xf capitaine-cursors-r4.tar.gz
+sudo cp -r capitaine-cursors ~/.local/share/icons
 ```
-```
-sudo cp /home/brad/Downloads/capitaine-cursors-r4 ~/.local/share/icons
-```
+Set cursor in GNOME Tweaks.
 </details>
 
 
