@@ -171,11 +171,6 @@ cd Orchis-kde/
 cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwinrule
 ```
-## Install from KDE Widgets / Icons
-- Plasmusic Toolbar
-- KDE Control Station
-- Simple Separator
-
 ## Papirus Icons
 ```
 wget -qO- https://git.io/papirus-icon-theme-install | sh
@@ -186,7 +181,11 @@ wget -qO- https://git.io/papirus-folders-install | sh
 ```
 papirus-folders -C palebrown --theme Papirus-Dark
 ```
-
+## Install from KDE Widgets
+- Plasmusic Toolbar
+- KDE Control Station
+- Simple Separator
+  
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
 </details>
