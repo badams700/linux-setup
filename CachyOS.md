@@ -60,13 +60,6 @@ sudo sbctl enroll-keys -m
 ```
 sudo mkinitcpio -P
 ```
-## Enroll TPM to LUKS
-```
-sudo systemd-cryptenroll /dev/nvme_n_p_ \
-  --tpm2-device=auto \
-  --tpm2-pcrs=0+2+7+12 \
-  --tpm2-public-key=/etc/systemd/tpm2-pcr-public-key.pem
-```
 ## Add UKI to UEFI boot menu
 ```
 sudo efibootmgr \
@@ -80,6 +73,13 @@ sudo efibootmgr \
 ## Reboot to firmware and enable Secure Boot - ensure UKI shows up in boot menu
 ```
 systemctl reboot --firmware-setup
+```
+## Enroll TPM to LUKS
+```
+sudo systemd-cryptenroll /dev/nvme_n_p_ \
+  --tpm2-device=auto \
+  --tpm2-pcrs=0+2+7+12 \
+  --tpm2-public-key=/etc/systemd/tpm2-pcr-public-key.pem
 ```
 ## Remove systemd-boot if successful
 ```
@@ -116,7 +116,7 @@ makepkg -si
 ```
 ## Install packages - GNOME or KDE
 ```
-yay -S --needed 1password alacarte bazaar blender calibre cava cmake  ddcutil-service discord dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qbittorrent rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher zoom && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen com.rafaelmardojai.Blanket
+yay -S --needed 1password bazaar blender calibre cava cmake discord dysk extra-cmake-modules ffmpeg flatpak gimp git go handbrake jre-openjdk npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qbittorrent rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin visual-studio-code-bin vlc xivlauncher zoom && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen com.rafaelmardojai.Blanket
 ```
 ## Hardware Acceleration Scripts
 ```
@@ -137,7 +137,7 @@ echo 'FONT=ter-132b' | sudo tee -a /etc/vconsole.conf
 
 ## KDE Applications
 ```
-yay -S --needed bup darkly dolphin-plugins kup kwin-effects-better-blur-dx okular
+yay -S --needed bup darkly dolphin-plugins kup kwin-effects-better-blur-dx okular plasma6-applets-audio-visualizer plasma6-applets-panel-colorizer
 ```
 ## Wallpaper Engine
 ```
@@ -172,12 +172,21 @@ cd ~/Projects
 sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blur.kwinrule
 ```
 ## Install from KDE Widgets / Icons
-- Kurve
-- Panel Colorizer
 - Plasmusic Toolbar
 - KDE Control Station
 - Simple Separator
-- Papirus Icons
+
+## Papirus Icons
+```
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+```
+```
+wget -qO- https://git.io/papirus-folders-install | sh
+```
+```
+papirus-folders -C palebrown --theme Papirus-Dark
+```
+
 ## KDE Layout
 ![KDE Layout](kde_layout.png)
 </details>
@@ -195,6 +204,9 @@ sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/blu
 - Hide System Icons
 - Just Perfectionn
 - Multi Display Adjustment
+## Yay
+```
+yay -S ddcutil-service alacarte
 ## Flatpak
 ```
 flatpak install flathub com.mattjakeman.ExtensionManager io.github.realmazharhussain.GdmSettings io.gitlab.adhami3310.Impression org.gnome.World.PikaBackup
