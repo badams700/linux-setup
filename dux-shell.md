@@ -108,7 +108,7 @@ papirus-folders -C palebrown --theme Papirus-Dark
 ```
 sudo mkdir ~/.local/share/icons
 cd ~/Projects
-sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/cursors.tar.gz
+sudo wget https://raw.githubusercontent.com/badams700/linux-setup/main/Files/cursors.tar.gz
 tar xf cursors.tar.gz
 sudo cp -r capitaine-cursors ~/.local/share/icons
 ```
