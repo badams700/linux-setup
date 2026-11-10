@@ -206,6 +206,7 @@ papirus-folders -C palebrown --theme Papirus-Dark
 ## Yay
 ```
 yay -S ddcutil-service alacarte
+```
 ## Flatpak
 ```
 flatpak install flathub com.mattjakeman.ExtensionManager io.github.realmazharhussain.GdmSettings io.gitlab.adhami3310.Impression org.gnome.World.PikaBackup
