@@ -88,7 +88,7 @@ sudo wget -P ~/Desktop https://raw.githubusercontent.com/badams700/linux-setup/m
 # Fastfetch
 ```
 mkdir ~/.config/fastfetch
-wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/config.jsonc
+wget -P ~/.config/fastfetch https://raw.githubusercontent.com/badams700/linux-setup/main/Files/config.jsonc
 ```
 # TTY Font
 ```
