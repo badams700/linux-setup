@@ -1,3 +1,13 @@
+# NVIDIA
+```
+sudo vim /etc/mkinitcpio.conf
+```
+```
+MODULES=(nvidia nvidia_modeset nvidia_drm nvidia_uvm)
+```
+```
+sudo plymouth-set-default-theme -R cachyos-bootanimation
+```
 # Snapshots
 ```
 sudo pacman -S snapper snap-pac btrfs-assistant
