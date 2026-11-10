@@ -113,7 +113,11 @@ tar xf cursors.tar.gz
 sudo cp -r capitaine-cursors ~/.local/share/icons
 ```
 # DMS Plugins
--
-
+- Desktop Command
+- Cava Visualizer
+- Network Indicator
+- Dux Software Depot
+- Phone Connect
+- Linux Wallpaper Engine
 # DMS Dock
 ![DMS Dock](dms-dock.png)
