@@ -109,10 +109,14 @@ sudo ufw route allow from 192.168.122.0/24
 ```
 ## Yay
 ```
-cd ~/Projects
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+sudo pacman -S yay
+```
+## Gaming Packages
+```
+sudo pacman -S alsa-plugins giflib glfw gst-plugins-base-libs lib32-alsa-plugins lib32-gtk3 lib32-libjpeg-turbo lib32-libva lib32-ocl-icd lib32-opencl-icd-loader libjpeg-turbo libva libxslt mpg123 opencl-icd-loader openal proton-cachyos-slr umu-launcher ttf-liberation wine-cachyos-opt vulkan-tools
+```
+```
+sudo pacman -S gamescope goverlay lib32-mangohud mangohud steam wqy-zenhei xorg-fonts-misc
 ```
 ## Install packages - GNOME or KDE
 ```
