@@ -118,6 +118,10 @@ makepkg -si
 ```
 yay -S --needed 1password bazaar blender cava cmake ddcutil-service discord dysk extra-cmake-modules ffmpeg flatpak fragments gimp git go handbrake impression jre-openjdk npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qdiskinfo rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin video-trimmer visual-studio-code-bin vlc xivlauncher zoom && flatpak install flathub io.github.maniacx.BudsLink io.github.wartybix.Constrict com.github.huluti.Curtail com.github.tchx84.Flatseal com.github.tenderowl.frog it.mijorus.gearlever com.makemkv.MakeMKV io.github.alainm23.planify org.vinegarhq.Sober app.zen_browser.zen com.rafaelmardojai.Blanket
 ```
+## Calibre
+```
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+```
 ## Hardware Acceleration Scripts
 ```
 sudo wget -P ~/.config https://raw.githubusercontent.com/badams700/linux-setup/main/Files/chrome-flags.conf
