@@ -101,7 +101,7 @@ sudo pacman -S yay
 ```
 ## Install packages
 ```
-yay -S --needed 1password bazaar blender cava cmake ddcutil-service discord dysk epic-games-launcher-bin extra-cmake-modules ffmpeg flatpak fragments gimp git go handbrake impression jre-openjdk mission-center npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qdiskinfo rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin video-trimmer visual-studio-code-bin vlc xivlauncher zoom
+yay -S --needed 1password bazaar blender cava claude-desktop cmake ddcutil-service discord dysk epic-games-launcher-bin extra-cmake-modules ffmpeg flatpak fragments gimp git go handbrake impression jre-openjdk mission-center npm ntfs-3g ntfsprogs obs-studio-browser obsidian onlyoffice-bin openrgb prismlauncher protonplus proton-vpn-gtk-app qdiskinfo rpi-imager terminus-font thunderbird ttf-noto-nerd twintaillauncher-bin video-trimmer visual-studio-code-bin vlc xivlauncher zoom
 ```
 ## Flatpak
 ```
