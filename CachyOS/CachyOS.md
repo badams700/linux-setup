@@ -29,6 +29,15 @@ Same for LTS
 sudo mkinitcpio -P
 ```
 Delete unneeded files from /boot
+## Edit /boot/loader/loader.conf
+```
+sudo vim /boot/loader/loader.conf
+```
+```
+default cachyos.efi
+timeout 0
+console-mode keep
+```
 ## Generate sbctl keys
 ```
 sudo sbctl create-keys
