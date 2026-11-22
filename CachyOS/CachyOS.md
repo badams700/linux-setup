@@ -65,6 +65,16 @@ sudo bootctl status
 ```
 sudo pacman -S cachyos-recovery
 ```
+## Add CachyOS Recovery to UEFI
+```
+sudo efibootmgr \
+  --create \
+  --disk /dev/nvme_n_ \
+  --part _ \
+  --label "CachyOS (Recovery)" \
+  --loader /EFI/Linux/cachyos-recovery.efi \
+  --unicode
+```
 ## Easy Anti-Cheat v2
 ```
 sudo eac-setup
