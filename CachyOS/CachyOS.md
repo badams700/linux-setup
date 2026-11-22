@@ -70,7 +70,7 @@ sudo pacman -S cachyos-recovery
 sudo efibootmgr \
   --create \
   --disk /dev/nvme_n_ \
-  --part _ \
+  --part 1 \
   --label "CachyOS (Recovery)" \
   --loader /EFI/Linux/cachyos-recovery.efi \
   --unicode
